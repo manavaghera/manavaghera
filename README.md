@@ -6,7 +6,7 @@ Quantitative DEV + AI & ML Engineer with data science
 
 I’m an aspiring Quantitative Developer with a strong interest in software engineering, AI, machine learning, and data science. Currently in the learning phase, I’m focused on building my skills and exploring projects that connect technology with problem-solving. While I have limited experience, I’m eager to grow through hands-on practice and continuous learning.
 
-*✅   My website portfolio - www.manavaghera.dev
+* ✅  My website portfolio - www.manavaghera.dev
 * 🌍  I'm based in INDIA
 * ✉️  You can contact me at [manavaghera@yahoo.com](mailto:manavaghera@yahoo.com)
 * 🧠  I'm currently learning Quantitative Dev
