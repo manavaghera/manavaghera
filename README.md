@@ -1,16 +1,16 @@
 Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) My name is Manav Aghera
 =====================================================================================================================================
 
-Quantitative DEV + AI & ML Engineer with data science
+AI & ML Engineer with data science + Quantitative DEV
 -----------------------------------------------------
 
-I’m an aspiring Quantitative Developer with a strong interest in software engineering, AI, machine learning, and data science. Currently in the learning phase, I’m focused on building my skills and exploring projects that connect technology with problem-solving. While I have limited experience, I’m eager to grow through hands-on practice and continuous learning.
+I’m an aspiring AI AND ML Developer with a strong interest in LLM AND  machine learning, and data science. Currently in the learning phase, I’m focused on building my skills and exploring projects that connect technology with problem-solving. While I have limited experience, I’m eager to grow through hands-on practice and continuous learning.
 
 * ✅  My website portfolio - www.manavaghera.dev
 * 🌍  I'm based in INDIA
 * ✉️  You can contact me at [manavaghera@yahoo.com](mailto:manavaghera@yahoo.com)
-* 🧠  I'm currently learning Quantitative Dev
-* 👥  I'm looking to collaborate on Quantitative Finance related projects and Any startups
+* 🧠  I'm currently learning Ai and ML 
+* 👥  I'm looking to collaborate on AI and Ml related projects and Any startups
 
 <p align="left">
 <a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" alt="Git" title="Git" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React" title="React" width="36" height="36" /></a><a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" alt="TailwindCSS" title="TailwindCSS" width="36" height="36" /></a><a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg" alt="Vite" title="Vite" width="36" height="36" /></a><a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" alt="MongoDB" title="MongoDB" width="36" height="36" /></a><a href="https://solana.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/solana-colored.svg" alt="Solana" title="Solana" width="36" height="36" /></a><a href="https://metamask.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/metamask-colored.svg" alt="MetaMask" title="MetaMask" width="36" height="36" /></a>
