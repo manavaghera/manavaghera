@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Clip Studio: Finds the games blowing up this week, then bulk-downloads their best Twitch clips as edit-ready videos or vertical Shorts.">
 <title>Clip Studio: Finds the games blowing up this week, then bulk-downloads their best Twitch clips as edit-ready videos or vertical Shorts.</title>
 <style>
-.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #d6c3a1; letter-spacing: 2px; }
-.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #5f6060; letter-spacing: 2.5px; }
-.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #ecebe6; letter-spacing: -.5px; }
-.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #898988; }
-.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #c0c0bc; }
-.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #d6c3a1; letter-spacing: 1px; }
+.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #eaaa00; letter-spacing: 2px; }
+.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #755b75; letter-spacing: 2.5px; }
+.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #dde3e8; letter-spacing: -.5px; }
+.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #948497; }
+.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #bcb9c4; }
+.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #eaaa00; letter-spacing: 1px; }
 .in { animation: in .9s cubic-bezier(.2,.8,.2,1) both; }
 .spin { animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }
 .slow { animation-duration: 12s; }
@@ -32,16 +32,16 @@
 
 <defs>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#d6c3a1"/><stop offset=".45" stop-color="#d6c3a1" stop-opacity=".05"/>
-    <stop offset=".55" stop-color="#d6c3a1" stop-opacity=".05"/><stop offset="1" stop-color="#d6c3a1"/>
+    <stop offset="0" stop-color="#eaaa00"/><stop offset=".45" stop-color="#eaaa00" stop-opacity=".05"/>
+    <stop offset=".55" stop-color="#eaaa00" stop-opacity=".05"/><stop offset="1" stop-color="#eaaa00"/>
     <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
   </linearGradient>
-  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#d6c3a1" stop-opacity=".10"/><stop offset=".6" stop-color="#d6c3a1" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#eaaa00" stop-opacity=".10"/><stop offset=".6" stop-color="#eaaa00" stop-opacity="0"/></radialGradient>
   <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
   <clipPath id="cc"><rect x="1" y="1" width="598" height="298" rx="20"/></clipPath>
 </defs>
 <g clip-path="url(#cc)">
-  <rect width="600" height="300" fill="#101214"/>
+  <rect width="600" height="300" fill="#3a0f34"/>
   <rect width="600" height="300" fill="url(#glow)"/>
   <rect x="0" y="0" width="260" height="300" fill="url(#sh)" class="sheen" transform="skewX(-20)"/>
 </g>
@@ -50,8 +50,8 @@
 <text x="72" y="52" class="tag">CREATOR TOOLING</text>
 <text x="36" y="114" class="name in">Clip Studio</text>
 <text x="36" y="158" class="blurb in" style="animation-delay:.25s">Finds the games blowing up this week, then bulk-downloads</text><text x="36" y="182" class="blurb in" style="animation-delay:.25s">their best Twitch clips as edit-ready videos or vertical</text><text x="36" y="206" class="blurb in" style="animation-delay:.25s">Shorts.</text>
-<rect x="36" y="240" width="71" height="28" rx="14" fill="#1f2123" stroke="#38393a"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="94" height="28" rx="14" fill="#1f2123" stroke="#38393a"/><text x="161.9" y="259" text-anchor="middle" class="chip">Streamlit</text><rect x="217.0" y="240" width="102" height="28" rx="14" fill="#1f2123" stroke="#38393a"/><text x="268.0" y="259" text-anchor="middle" class="chip">Twitch API</text><rect x="327.0" y="240" width="71" height="28" rx="14" fill="#1f2123" stroke="#38393a"/><text x="362.4" y="259" text-anchor="middle" class="chip">Shorts</text>
+<rect x="36" y="240" width="71" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="94" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="161.9" y="259" text-anchor="middle" class="chip">Streamlit</text><rect x="217.0" y="240" width="102" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="268.0" y="259" text-anchor="middle" class="chip">Twitch API</text><rect x="327.0" y="240" width="71" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="362.4" y="259" text-anchor="middle" class="chip">Shorts</text>
 <text x="542" y="259" text-anchor="end" class="cta">VIEW REPO</text>
 <text x="550" y="260" class="cta arrow">↗</text>
-<rect x="486" y="50" width="68" height="48" rx="10" fill="none" stroke="#d6c3a1" stroke-width="2.5"/><path d="M512 62 L533 74 L512 86z" fill="#d6c3a1" class="beat"/><line x1="486" y1="108" x2="554" y2="108" stroke="#d6c3a1" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/><line x1="486" y1="108" x2="554" y2="108" stroke="#d6c3a1" stroke-width="3" stroke-linecap="round" class="scrub"/>
+<rect x="486" y="50" width="68" height="48" rx="10" fill="none" stroke="#eaaa00" stroke-width="2.5"/><path d="M512 62 L533 74 L512 86z" fill="#eaaa00" class="beat"/><line x1="486" y1="108" x2="554" y2="108" stroke="#eaaa00" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/><line x1="486" y1="108" x2="554" y2="108" stroke="#eaaa00" stroke-width="3" stroke-linecap="round" class="scrub"/>
 </svg>
