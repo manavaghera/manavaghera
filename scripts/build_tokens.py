@@ -1,5 +1,6 @@
-"""Render assets/generated/tokens.svg from the AI coding agents' local logs:
-Claude Code transcripts, OpenAI Codex's thread database and Gemini CLI chats.
+"""Render assets/generated/tokens.svg from the AI coding agents' local records:
+Claude Code (its own all-time stats cache plus transcripts), OpenAI Codex's
+thread database, Mimo Code and opencode message databases, and Gemini CLI chats.
 
 Token counts only exist on this PC, so this runs locally, not in Actions.
 Claude Code prunes old transcripts, so totals are kept in
@@ -72,6 +73,41 @@ def gemini(root):
     return sessions
 
 
+def claude_all_time(path):
+    """Claude Code's own lifetime totals (what /stats shows); survives transcript cleanup."""
+    try:
+        stats = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    keys = ("inputTokens", "outputTokens", "cacheReadInputTokens", "cacheCreationInputTokens")
+    n = sum(m.get(k) or 0 for m in stats.get("modelUsage", {}).values() for k in keys)
+    day = (stats.get("firstSessionDate") or dt.date.today().isoformat())[:10]
+    return {"all_time": {"tokens": n, "day": day}} if n else {}
+
+
+def opencode_family(db):
+    """Per-session totals from opencode-style stores (opencode, Mimo Code)."""
+    if not os.path.exists(db):
+        return {}
+    sessions = {}
+    with sqlite3.connect(f"file:{db}?mode=ro", uri=True) as con:
+        rows = con.execute("select session_id, time_created, data from message where data like '%\"tokens\"%'")
+        for sid, created, data in rows:
+            try:
+                msg = json.loads(data)
+            except ValueError:
+                continue
+            t = msg.get("tokens") if msg.get("role") == "assistant" else None
+            if not t:
+                continue
+            cache = t.get("cache") or {}
+            n = sum(t.get(k) or 0 for k in ("input", "output", "reasoning")) + (cache.get("read") or 0) + (cache.get("write") or 0)
+            rec = sessions.setdefault(sid, {"tokens": 0, "day": ""})
+            rec["tokens"] += n
+            rec["day"] = max(rec["day"], dt.date.fromtimestamp(created / 1000).isoformat())
+    return sessions
+
+
 def merge(ledger_path, fresh):
     """Keep the larger record per day/thread/session: logs on disk shrink as they age out."""
     ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {}
@@ -118,19 +154,23 @@ def render(ledger):
     for day, rec in ledger.get("claude_days", {}).items():
         daily[dt.date.fromisoformat(day)] += rec["tokens"]
         per_tool["claude"] += rec["tokens"]
-    for source in ("codex_threads", "gemini_sessions"):
+    # lifetime figure from Claude Code's stats cache covers days whose transcripts are gone
+    lifetime = ledger.get("claude_stats", {}).get("all_time", {})
+    per_tool["claude"] = max(per_tool["claude"], lifetime.get("tokens", 0))
+    for source in ("codex_threads", "mimo_sessions", "opencode_sessions", "gemini_sessions"):
         for rec in ledger.get(source, {}).values():
             daily[dt.date.fromisoformat(rec["day"])] += rec["tokens"]
             per_tool[source] += rec["tokens"]
-    total = sum(daily.values())
+    total = sum(per_tool.values())
     month = sum(v for k, v in daily.items() if k > dt.date.today() - dt.timedelta(days=30))
-    since = min(daily)
+    since = min(list(daily) + ([dt.date.fromisoformat(lifetime["day"])] if lifetime else []))
     bars, best_day, best = chart(daily, 640, 130, W - pad - 640, 230)
     tiles = [("CLAUDE CODE", short(per_tool["claude"])), ("OPENAI CODEX", short(per_tool["codex_threads"])),
-             ("LAST 30 DAYS", short(month)), ("BUSIEST DAY", short(best))]
+             ("MIMO CODE", short(per_tool["mimo_sessions"])), ("OPENCODE", short(per_tool["opencode_sessions"])),
+             ("GEMINI CLI", short(per_tool["gemini_sessions"])), ("LAST 30 DAYS", short(month))]
     tile_svg = []
     for i, (label, value) in enumerate(tiles):
-        x, y = pad + (i % 2) * 280, 296 + (i // 2) * 72
+        x, y = pad + (i % 3) * 190, 296 + (i // 3) * 72
         tile_svg.append(f'<text x="{x}" y="{y}" class="label">{label}</text>'
                         f'<text x="{x}" y="{y + 36}" class="mid">{esc(value)}</text>')
     stamp = dt.date.today().isoformat()
@@ -159,7 +199,7 @@ def render(ledger):
 <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="{BG}" stroke="{LINE}"/>
 <circle cx="{pad + 6}" cy="42" r="5" fill="{HOT}" class="dot"/>
 <text x="{pad + 22}" y="47" class="title">AI-NATIVE · TOKENS BURNED</text>
-<text x="{W - pad}" y="47" text-anchor="end" class="stamp">claude code · codex · gemini cli · updated {stamp}</text>
+<text x="{W - pad}" y="47" text-anchor="end" class="stamp">updated {stamp}</text>
 <rect x="{pad}" y="76" width="{W - 2 * pad}" height="1" fill="{PANEL}"/>
 <text x="{pad}" y="108" class="label">TOKENS PROCESSED SINCE {since:%b %Y}</text>
 <g clip-path="url(#bigclip)">{odometer(digits, pad, 200, .2, 96)}</g>
@@ -176,5 +216,8 @@ if __name__ == "__main__":
     home = os.path.expanduser("~")
     fresh = {"claude_days": collect(os.path.join(home, ".claude", "projects")),
              "codex_threads": codex(os.path.join(home, ".codex", "state_5.sqlite")),
-             "gemini_sessions": gemini(os.path.join(home, ".gemini", "tmp"))}
+             "gemini_sessions": gemini(os.path.join(home, ".gemini", "tmp")),
+             "claude_stats": claude_all_time(os.path.join(home, ".claude", "stats-cache.json")),
+             "mimo_sessions": opencode_family(os.path.join(home, ".local", "share", "mimocode", "mimocode.db")),
+             "opencode_sessions": opencode_family(os.path.join(home, ".local", "share", "opencode", "opencode.db"))}
     write("generated/tokens.svg", render(merge(ASSETS / "generated" / "tokens.json", fresh)))
