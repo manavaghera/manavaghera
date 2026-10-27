@@ -10,7 +10,7 @@ import sys
 import urllib.request
 from collections import Counter
 
-from svgkit import BG, CYAN, DIM, INK, LINE, MONO, MUTED, PANEL, SANS, VIOLET, esc, svg, write
+from svgkit import ACCENT, BG, DIM, INK, LINE, MONO, MUTED, PANEL, SANS, esc, svg, write
 
 QUERY = """
 query($login: String!) {
@@ -18,14 +18,15 @@ query($login: String!) {
     repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
       totalCount
       nodes { stargazerCount languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
-        edges { size node { name color } } } }
+        edges { size node { name } } } }
     }
     contributionsCollection { contributionCalendar { totalContributions
       weeks { contributionDays { contributionCount date } } } }
   }
 }"""
 
-HEAT = ["#0f1523", "#0c4a5a", "#0e7490", "#06b6d4", "#67e8f9"]
+HEAT = ["#161616", "#2c3a10", "#557318", "#8fc02a", "#c6ff3d"]
+LANG_COLORS = ["#c6ff3d", "#ededE6", "#ff6b2c", "#8a8a85", "#5e5e59", "#3d3d3a", "#262624"]
 CYCLE = 12  # seconds; odometers and heatmap replay on this loop
 
 
@@ -44,12 +45,10 @@ def fetch(login, token):
 
 def summarize(user):
     repos = user["repositories"]
-    langs, colors = Counter(), {}
+    langs = Counter()
     for repo in repos["nodes"]:
         for edge in repo["languages"]["edges"]:
-            name = edge["node"]["name"]
-            langs[name] += edge["size"]
-            colors[name] = edge["node"]["color"] or "#64748b"
+            langs[edge["node"]["name"]] += edge["size"]
     cal = user["contributionsCollection"]["contributionCalendar"]
     days = [d for w in cal["weeks"] for d in w["contributionDays"]]
     today = dt.date.today().isoformat()
@@ -68,7 +67,7 @@ def summarize(user):
 
     return dict(total=cal["totalContributions"], current=current, longest=longest,
                 repos=repos["totalCount"], stars=sum(r["stargazerCount"] for r in repos["nodes"]),
-                weeks=cal["weeks"], langs=langs, colors=colors)
+                weeks=cal["weeks"], langs=langs)
 
 
 def odometer(value, x, y, delay):
@@ -122,21 +121,21 @@ def heatmap(weeks, x0, y0, cell=15, gap=4):
     return "".join(months) + days + "".join(out) + legend + sweep, width
 
 
-def languages(langs, colors, x0, y0, width):
+def languages(langs, x0, y0, width):
     total = sum(langs.values()) or 1
     top = langs.most_common(6)
     rest = total - sum(v for _, v in top)
     if rest > 0:
         top.append(("Other", rest))
-        colors = {**colors, "Other": "#334155"}
     bar, legend, x = [], [], x0
     for i, (name, size) in enumerate(top):
         w = width * size / total
-        bar.append(f'<rect x="{x:.1f}" y="{y0}" width="{max(w - 2, 1):.1f}" height="14" fill="{colors[name]}"/>')
+        color = LANG_COLORS[i]
+        bar.append(f'<rect x="{x:.1f}" y="{y0}" width="{max(w - 2, 1):.1f}" height="14" fill="{color}"/>')
         x += w
         lx = x0 + (i % 4) * (width / 4)
         ly = y0 + 52 + (i // 4) * 30
-        legend.append(f'<circle cx="{lx + 6:.1f}" cy="{ly - 5}" r="6" fill="{colors[name]}"/>'
+        legend.append(f'<circle cx="{lx + 6:.1f}" cy="{ly - 5}" r="6" fill="{color}"/>'
                       f'<text x="{lx + 20:.1f}" y="{ly}" class="lang">{esc(name)}'
                       f'<tspan class="axis"> {100 * size / total:.1f}%</tspan></text>')
     return (f'<clipPath id="barclip"><rect x="{x0}" y="{y0}" width="{width}" height="14" rx="7"/></clipPath>'
@@ -162,18 +161,18 @@ def render(s, login):
     heat, hw = heatmap(s["weeks"], 0, 0)
     hx = (W - hw) / 2 + 14
     heat, _ = heatmap(s["weeks"], hx, 292)
-    langs = languages(s["langs"], s["colors"], pad, 470, W - 2 * pad)
+    langs = languages(s["langs"], pad, 470, W - 2 * pad)
     legend_items = min(len(s["langs"]), 6) + (len(s["langs"]) > 6)
     H = 470 + 52 + 30 * ((legend_items - 1) // 4) + 36
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     style = f"""
 .title {{ font: 700 15px {MONO}; fill: {INK}; letter-spacing: 3px; }}
 .stamp {{ font: 500 12px {MONO}; fill: {DIM}; }}
-.label {{ font: 700 12px {MONO}; fill: {CYAN}; letter-spacing: 2.5px; }}
+.label {{ font: 700 12px {MONO}; fill: {ACCENT}; letter-spacing: 2.5px; }}
 .num {{ font: 800 50px {MONO}; fill: {INK}; }}
 .sub {{ font: 500 14px {SANS}; fill: {MUTED}; }}
 .axis {{ font: 500 11.5px {MONO}; fill: {DIM}; }}
-.lang {{ font: 600 14px {SANS}; fill: #cbd5e1; }}
+.lang {{ font: 600 14px {SANS}; fill: #d6d6cf; }}
 .dot {{ animation: blink 1.4s ease-in-out infinite; }}
 .cell {{ animation: pop {CYCLE}s cubic-bezier(.2,.9,.3,1.3) infinite both; transform-box: fill-box; transform-origin: center; }}
 .sweep {{ animation: sweep 6s linear infinite; }}
@@ -185,11 +184,11 @@ def render(s, login):
 {roll_css()}"""
     body = f"""
 <defs>
-  <linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{VIOLET}" stop-opacity="0"/>
-  <stop offset=".5" stop-color="{VIOLET}" stop-opacity=".22"/><stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/></linearGradient>
+  <linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{ACCENT}" stop-opacity="0"/>
+  <stop offset=".5" stop-color="{ACCENT}" stop-opacity=".16"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></linearGradient>
 </defs>
 <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="{BG}" stroke="{LINE}"/>
-<circle cx="{pad + 6}" cy="42" r="5" fill="#34d399" class="dot"/>
+<circle cx="{pad + 6}" cy="42" r="5" fill="{ACCENT}" class="dot"/>
 <text x="{pad + 22}" y="47" class="title">LIVE TELEMETRY · @{esc(login)}</text>
 <text x="{W - pad}" y="47" text-anchor="end" class="stamp">auto-updated {stamp}</text>
 {"".join(tile_svg)}

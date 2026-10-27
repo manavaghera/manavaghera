@@ -7,15 +7,15 @@
 <br />
 
 <a href="https://www.manavaghera.dev">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=22D3EE&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=C6FF3D&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
 </a>
 
 <br /><br />
 
-<a href="https://www.manavaghera.dev"><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-22d3ee?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=05060a" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/manav-aghera"><img src="https://img.shields.io/badge/linkedin-manav--aghera-a78bfa?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=05060a" alt="LinkedIn" /></a>
-<a href="mailto:manavaghera@yahoo.com"><img src="https://img.shields.io/badge/email-say%20hello-f472b6?style=for-the-badge&logo=maildotru&logoColor=white&labelColor=05060a" alt="Email" /></a>
-<img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=34d399&label=PROFILE+VIEWS" alt="Profile views" />
+<a href="https://www.manavaghera.dev"><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-c6ff3d?style=for-the-badge&logo=googlechrome&logoColor=c6ff3d&labelColor=111111" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/manav-aghera"><img src="https://img.shields.io/badge/linkedin-manav--aghera-ededE6?style=for-the-badge&logo=linkedin&logoColor=ededE6&labelColor=111111" alt="LinkedIn" /></a>
+<a href="mailto:manavaghera@yahoo.com"><img src="https://img.shields.io/badge/email-say%20hello-ff6b2c?style=for-the-badge&logo=maildotru&logoColor=ff6b2c&labelColor=111111" alt="Email" /></a>
+<img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=c6ff3d&label=PROFILE+VIEWS" alt="Profile views" />
 
 </div>
 

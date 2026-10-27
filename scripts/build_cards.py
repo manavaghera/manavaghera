@@ -2,30 +2,30 @@
 
 Run:  python scripts/build_cards.py
 """
-from svgkit import BG, DIM, INK, MONO, MUTED, SANS, esc, svg, wrap, write
+from svgkit import ACCENT, BG, DIM, HOT, INK, MONO, MUTED, SANS, esc, svg, wrap, write
 
 PROJECTS = [
-    dict(slug="chronus", name="CHRONUS", tag="RAG · DIGITAL LEGACY", color="#ff6436", glyph="clock",
+    dict(slug="chronus", name="CHRONUS", tag="RAG · DIGITAL LEGACY", color=ACCENT, glyph="clock",
          blurb="A consent-first memory archive you can talk to. Every answer cites its source, "
                "and it says “I don't know” when the archive is silent.",
          chips=["Python", "FastAPI", "React", "ChromaDB", "PyTorch"]),
-    dict(slug="newssense", name="NewsSense", tag="LLM NEWSROOM", color="#8b5cf6", glyph="radar",
+    dict(slug="newssense", name="NewsSense", tag="LLM NEWSROOM", color=ACCENT, glyph="radar",
          blurb="AI news with visible evidence: verified claims, rapid source briefs and model "
                "comparisons, so readers see where every claim came from.",
          chips=["Python", "FastAPI", "React 19", "TypeScript"]),
-    dict(slug="kaggle-agent", name="Autonomous Agent", tag="KAGGLE · TOP 1%", color="#fbbf24", glyph="bars",
+    dict(slug="kaggle-agent", name="Autonomous Agent", tag="KAGGLE · TOP 1%", color=HOT, glyph="bars",
          blurb="An LLM-driven agent that builds, cross-validates and submits classifiers on "
                "unseen datasets with zero human intervention.",
          chips=["Python", "LLM agents", "AutoML", "AUC 0.83+"]),
-    dict(slug="clip-studio", name="Clip Studio", tag="CREATOR TOOLING", color="#a970ff", glyph="play",
+    dict(slug="clip-studio", name="Clip Studio", tag="CREATOR TOOLING", color=ACCENT, glyph="play",
          blurb="Finds the games blowing up this week, then bulk-downloads their best Twitch clips "
                "as edit-ready videos or vertical Shorts.",
          chips=["Python", "Streamlit", "Twitch API", "Shorts"]),
-    dict(slug="autonomous-content", name="AutonomousContent", tag="MULTI-AGENT", color="#10b981", glyph="orbit",
+    dict(slug="autonomous-content", name="AutonomousContent", tag="MULTI-AGENT", color=ACCENT, glyph="orbit",
          blurb="A self-healing editorial team of AI agents that researches, writes and validates, "
                "rewriting until the article clears the bar.",
          chips=["Python", "OpenRouter", "arXiv", "Agents"]),
-    dict(slug="mcp-demo", name="MCP Demo", tag="MODEL CONTEXT PROTOCOL", color="#6366f1", glyph="graph",
+    dict(slug="mcp-demo", name="MCP Demo", tag="MODEL CONTEXT PROTOCOL", color=ACCENT, glyph="graph",
          blurb="A CLI chatbot showing MCP end to end: a live server exposing tools, resources "
                "and prompts, and Claude deciding when to use them.",
          chips=["Python", "MCP", "Claude", "CLI"]),
@@ -77,7 +77,7 @@ def card(index, p):
 .tag {{ font: 600 12px {MONO}; fill: {DIM}; letter-spacing: 2.5px; }}
 .name {{ font: 800 34px {SANS}; fill: {INK}; letter-spacing: -.5px; }}
 .blurb {{ font: 400 16px {SANS}; fill: {MUTED}; }}
-.chip {{ font: 600 12.5px {MONO}; fill: #cbd5e1; }}
+.chip {{ font: 600 12.5px {MONO}; fill: #d6d6cf; }}
 .cta {{ font: 700 13px {MONO}; fill: {c}; letter-spacing: 1px; }}
 .in {{ animation: in .9s cubic-bezier(.2,.8,.2,1) both; }}
 .spin {{ animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }}
@@ -103,7 +103,7 @@ def card(index, p):
     chips, x = "", 36
     for chip in p["chips"]:
         w = len(chip) * 7.8 + 24
-        chips += (f'<rect x="{x}" y="{H - 60}" width="{w:.0f}" height="28" rx="14" fill="#0e1422" stroke="#222c40"/>'
+        chips += (f'<rect x="{x}" y="{H - 60}" width="{w:.0f}" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/>'
                   f'<text x="{x + w / 2:.1f}" y="{H - 41}" text-anchor="middle" class="chip">{esc(chip)}</text>')
         x += w + 8
     body = f"""
@@ -113,7 +113,7 @@ def card(index, p):
     <stop offset=".55" stop-color="{c}" stop-opacity=".05"/><stop offset="1" stop-color="{c}"/>
     <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
   </linearGradient>
-  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="{c}" stop-opacity=".22"/><stop offset=".6" stop-color="{c}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="{c}" stop-opacity=".10"/><stop offset=".6" stop-color="{c}" stop-opacity="0"/></radialGradient>
   <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
   <clipPath id="cc"><rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="20"/></clipPath>
 </defs>

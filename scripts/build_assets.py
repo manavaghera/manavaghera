@@ -4,8 +4,7 @@ Run:  python scripts/build_assets.py
 """
 import random
 
-from svgkit import (AMBER, BG, CYAN, DIM, GREEN, INK, LINE, MONO, MUTED, PANEL, PINK, SANS,
-                    VIOLET, esc, pct, svg, write)
+from svgkit import (ACCENT, BG, DIM, HOT, INK, LINE, MONO, MUTED, PANEL, SANS, SOFT, esc, pct, svg, write)
 
 random.seed(7)
 
@@ -26,7 +25,7 @@ def neural_net(x0, y0, w, h):
             for (x2, y2) in b:
                 base.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}"/>')
                 if random.random() < 0.55:
-                    color = random.choice([CYAN, CYAN, VIOLET, PINK])
+                    color = random.choice([ACCENT, ACCENT, ACCENT, HOT])
                     delay = random.uniform(0, 4)
                     pulses.append(
                         f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" pathLength="100" '
@@ -34,7 +33,7 @@ def neural_net(x0, y0, w, h):
     for li, layer in enumerate(nodes):
         for (x, y) in layer:
             delay = random.uniform(0, 3)
-            color = [CYAN, VIOLET, VIOLET, PINK][li]
+            color = [SOFT, ACCENT, ACCENT, HOT][li]
             dots.append(
                 f'<circle cx="{x:.1f}" cy="{y:.1f}" r="13" fill="{color}" class="halo" '
                 f'style="animation-delay:-{delay:.2f}s"/>'
@@ -51,12 +50,12 @@ def neural_net(x0, y0, w, h):
 def ticker(y, width):
     words = ["LLM SYSTEMS", "RAG PIPELINES", "AUTONOMOUS AGENTS", "MODEL CONTEXT PROTOCOL",
              "KAGGLE TOP 1%", "QUANT RESEARCH", "FASTAPI", "REACT", "PYTORCH", "EVALS"]
-    spans = "".join(f'<tspan fill="{GREEN}">▲</tspan><tspan> {w}   </tspan>' for w in words)
+    spans = "".join(f'<tspan fill="{ACCENT}">▲</tspan><tspan> {w}   </tspan>' for w in words)
     run = 1500
     copies = "".join(
         f'<text x="{i * run}" y="{y}" textLength="{run - 30}" lengthAdjust="spacing" class="tick">{spans}</text>'
         for i in range(2))
-    return (f'<rect x="0" y="{y - 30}" width="{width}" height="48" fill="#070b13"/>'
+    return (f'<rect x="0" y="{y - 30}" width="{width}" height="48" fill="#0d0d0d"/>'
             f'<line x1="0" y1="{y - 30}" x2="{width}" y2="{y - 30}" stroke="{LINE}"/>'
             f'<g class="ticker">{copies}</g>')
 
@@ -65,17 +64,17 @@ def hero():
     W, H = 1200, 440
     style = f"""
 .tiny {{ font: 500 13px {MONO}; fill: {DIM}; }}
-.prompt {{ font: 500 18px {MONO}; fill: {CYAN}; }}
+.prompt {{ font: 500 18px {MONO}; fill: {ACCENT}; }}
 .name {{ font: 800 96px {SANS}; letter-spacing: -2px; }}
-.role {{ font: 600 17px {MONO}; fill: #c7d2fe; letter-spacing: 3px; animation: rise 1.2s .5s cubic-bezier(.2,.8,.2,1) both; }}
+.role {{ font: 600 17px {MONO}; fill: #d6d6cf; letter-spacing: 3px; animation: rise 1.2s .5s cubic-bezier(.2,.8,.2,1) both; }}
 .copy {{ font: 400 18px {SANS}; fill: {MUTED}; animation: rise 1.2s .8s cubic-bezier(.2,.8,.2,1) both; }}
 .pill {{ animation: rise 1.2s 1.1s cubic-bezier(.2,.8,.2,1) both; }}
 .pilltext {{ font: 600 14px {MONO}; fill: {INK}; }}
-.tick {{ font: 700 15px {MONO}; fill: #94a3b8; letter-spacing: 2px; }}
+.tick {{ font: 700 15px {MONO}; fill: #8a8a85; letter-spacing: 2px; }}
 .ticker {{ animation: scroll 38s linear infinite; }}
 .reveal {{ animation: reveal 1.4s cubic-bezier(.7,0,.2,1) both; }}
-.g1 {{ fill: {CYAN}; opacity: 0; animation: glitch1 4.5s steps(1) infinite; }}
-.g2 {{ fill: {PINK}; opacity: 0; animation: glitch2 4.5s steps(1) infinite; }}
+.g1 {{ fill: {ACCENT}; opacity: 0; animation: glitch1 4.5s steps(1) infinite; }}
+.g2 {{ fill: {HOT}; opacity: 0; animation: glitch2 4.5s steps(1) infinite; }}
 .caret {{ animation: blink 1s steps(1) infinite; }}
 .live {{ animation: live 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }}
 .pulse line {{ stroke-dasharray: 9 191; stroke-dashoffset: -100; animation: signal 4s linear infinite; }}
@@ -115,17 +114,12 @@ def hero():
 <defs>
   <clipPath id="frame"><rect width="{W}" height="{H}" rx="22"/></clipPath>
   <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-    <circle cx="2" cy="2" r="1.1" fill="#1b2335"/>
+    <circle cx="2" cy="2" r="1.1" fill="#1e1e1c"/>
   </pattern>
-  <radialGradient id="glowA"><stop offset="0" stop-color="{CYAN}" stop-opacity=".30"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/></radialGradient>
-  <radialGradient id="glowB"><stop offset="0" stop-color="{VIOLET}" stop-opacity=".28"/><stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowA"><stop offset="0" stop-color="{ACCENT}" stop-opacity=".13"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowB"><stop offset="0" stop-color="{HOT}" stop-opacity=".10"/><stop offset="1" stop-color="{HOT}" stop-opacity="0"/></radialGradient>
   <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="{CYAN}" stop-opacity="0"/><stop offset=".5" stop-color="{CYAN}" stop-opacity=".07"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="nameG" x1="0" y1="0" x2=".5" y2="0" spreadMethod="repeat">
-    <stop offset="0" stop-color="{CYAN}"/><stop offset=".35" stop-color="{VIOLET}"/>
-    <stop offset=".65" stop-color="{PINK}"/><stop offset="1" stop-color="{CYAN}"/>
-    <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="1 0" dur="6s" repeatCount="indefinite"/>
+    <stop offset="0" stop-color="{ACCENT}" stop-opacity="0"/><stop offset=".5" stop-color="{ACCENT}" stop-opacity=".045"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/>
   </linearGradient>
 </defs>
 <g clip-path="url(#frame)">
@@ -139,29 +133,29 @@ def hero():
   <g class="reveal">
     <text {name_attrs} class="name g1">{name}</text>
     <text {name_attrs} class="name g2">{name}</text>
-    <text {name_attrs} class="name" fill="url(#nameG)">{name}</text>
+    <text {name_attrs} class="name"><tspan fill="{INK}">MANAV </tspan><tspan fill="{ACCENT}">AGHERA</tspan></text>
   </g>
   <text x="74" y="258" class="role">AI / ML ENGINEER  ·  LLM SYSTEMS  ·  QUANT DEV</text>
   <text x="74" y="300" class="copy">Final-year CSE student. I build AI that shows its work —</text>
   <text x="74" y="326" class="copy">RAG systems that cite sources, autonomous agents, quant tooling.</text>
   <g class="pill">
-    <rect x="72" y="345" width="392" height="34" rx="17" fill="#0b1220" stroke="#1f2a3d"/>
-    <circle cx="94" cy="362" r="5" fill="{GREEN}" class="live"/>
-    <circle cx="94" cy="362" r="5" fill="{GREEN}"/>
+    <rect x="72" y="345" width="392" height="34" rx="17" fill="#121212" stroke="#2a2a2a"/>
+    <circle cx="94" cy="362" r="5" fill="{ACCENT}" class="live"/>
+    <circle cx="94" cy="362" r="5" fill="{ACCENT}"/>
     <text x="110" y="367" class="pilltext">open to internships &amp; collabs · India</text>
   </g>
 
   {neural_net(830, 70, 300, 230)}
   {ticker(H - 18, W)}
 </g>
-<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="none" stroke="#1a2233"/>"""
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="none" stroke="#222222"/>"""
     write("hero.svg", svg(W, H, body, "Manav Aghera — AI/ML engineer, LLM systems, quant dev", style))
 
 
 # ------------------------------------------------------------------------ terminal
 def terminal():
     W, T = 1200, 18.0
-    G, C, V, A, P, M = GREEN, CYAN, VIOLET, AMBER, PINK, MUTED
+    G, C, V, A, P, M = ACCENT, ACCENT, SOFT, HOT, HOT, MUTED
     # (kind, segments, time). kind: cmd types out, out appears; segments are (text, color)
     script = [
         ("cmd", [("whoami", INK)]),
@@ -212,7 +206,7 @@ def terminal():
         elif kind == "bar":
             bw, dur = 560, 2.4
             rows.append(
-                f'<g class="{cls}"><rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="#0f1726" stroke="#1f2a3d"/>'
+                f'<g class="{cls}"><rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="#161616" stroke="#2a2a2a"/>'
                 f'<rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="url(#barG)" class="fill{i}"/>'
                 f'<text x="{x0 + bw + 20}" y="{y}" class="t"><tspan fill="{G}">✓ deployed</tspan>'
                 f'<tspan fill="{M}">  idea → prototype → production</tspan></text></g>')
@@ -236,13 +230,13 @@ def terminal():
 """ + "\n".join(css)
     body = f"""
 <defs>
-  <linearGradient id="barG" x1="0" x2="1"><stop offset="0" stop-color="{C}"/><stop offset=".6" stop-color="{V}"/><stop offset="1" stop-color="{P}"/></linearGradient>
-  <linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#0b1019"/></linearGradient>
+  <linearGradient id="barG" x1="0" x2="1"><stop offset="0" stop-color="{C}"/><stop offset=".85" stop-color="{C}"/><stop offset="1" stop-color="{P}"/></linearGradient>
+  <linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#171717"/><stop offset="1" stop-color="#121212"/></linearGradient>
 </defs>
-<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="16" fill="{PANEL}" stroke="#1f2a3d"/>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="16" fill="{PANEL}" stroke="#262626"/>
 <path d="M16 .5 H{W - 16} a15.5 15.5 0 0 1 15.5 15.5 V46 H.5 V16 A15.5 15.5 0 0 1 16 .5z" fill="url(#chrome)"/>
-<line x1="0" y1="46" x2="{W}" y2="46" stroke="#1f2a3d"/>
-<circle cx="28" cy="23" r="7" fill="#ff5f57"/><circle cx="52" cy="23" r="7" fill="#febc2e"/><circle cx="76" cy="23" r="7" fill="#28c840"/>
+<line x1="0" y1="46" x2="{W}" y2="46" stroke="#262626"/>
+<circle cx="28" cy="23" r="6" fill="#2e2e2c"/><circle cx="48" cy="23" r="6" fill="#2e2e2c"/><circle cx="68" cy="23" r="6" fill="{ACCENT}"/>
 <text x="{W / 2}" y="28" text-anchor="middle" class="title">manav@neural-core: ~/profile — zsh</text>
 {"".join(rows)}"""
     write("terminal.svg", svg(W, H, body, "Terminal: whoami, focus areas, shipped projects and status", style))
@@ -257,11 +251,11 @@ def divider():
 @keyframes run { from { stroke-dashoffset: 200; } to { stroke-dashoffset: 0; } }
 @keyframes gem { 50% { transform: rotate(135deg) scale(1.3); } }"""
     body = f"""
-<defs><linearGradient id="dl" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="{W - 40}" y2="0"><stop offset="0" stop-color="{CYAN}" stop-opacity="0"/>
-<stop offset=".5" stop-color="{VIOLET}" stop-opacity=".7"/><stop offset="1" stop-color="{PINK}" stop-opacity="0"/></linearGradient></defs>
+<defs><linearGradient id="dl" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="{W - 40}" y2="0"><stop offset="0" stop-color="{INK}" stop-opacity="0"/>
+<stop offset=".5" stop-color="{INK}" stop-opacity=".35"/><stop offset="1" stop-color="{INK}" stop-opacity="0"/></linearGradient></defs>
 <line x1="40" y1="18" x2="{W - 40}" y2="18" stroke="url(#dl)" stroke-width="1"/>
-<line x1="40" y1="18" x2="{W - 40}" y2="18" stroke="{CYAN}" stroke-width="2" pathLength="200" class="run" stroke-linecap="round"/>
-<g transform="translate({W / 2} 18)"><rect x="-6" y="-6" width="12" height="12" fill="{BG}" stroke="{VIOLET}" stroke-width="1.5" class="gem"/></g>"""
+<line x1="40" y1="18" x2="{W - 40}" y2="18" stroke="{ACCENT}" stroke-width="2" pathLength="200" class="run" stroke-linecap="round"/>
+<g transform="translate({W / 2} 18)"><rect x="-6" y="-6" width="12" height="12" fill="{BG}" stroke="{ACCENT}" stroke-width="1.5" class="gem"/></g>"""
     write("divider.svg", svg(W, H, body, "divider", style))
 
 
@@ -284,13 +278,13 @@ def footer():
     body = f"""
 <defs>
   <clipPath id="fc"><rect width="{W}" height="{H}" rx="22"/></clipPath>
-  <linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="{CYAN}"/><stop offset=".5" stop-color="{VIOLET}"/><stop offset="1" stop-color="{PINK}"/></linearGradient>
+  <linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="{ACCENT}"/><stop offset="1" stop-color="{ACCENT}"/></linearGradient>
 </defs>
 <g clip-path="url(#fc)">
   <rect width="{W}" height="{H}" fill="{BG}"/>
-  <path class="w3" d="{wave(14, 300, 140)}" fill="url(#fg)" opacity=".10"/>
-  <path class="w2" d="{wave(18, 300, 158)}" fill="url(#fg)" opacity=".18"/>
-  <path class="w1" d="{wave(12, 300, 176)}" fill="url(#fg)" opacity=".35"/>
+  <path class="w3" d="{wave(14, 300, 140)}" fill="url(#fg)" opacity=".05"/>
+  <path class="w2" d="{wave(18, 300, 158)}" fill="url(#fg)" opacity=".10"/>
+  <path class="w1" d="{wave(12, 300, 176)}" fill="url(#fg)" opacity=".20"/>
   <text x="{W / 2}" y="78" text-anchor="middle" class="big">Thanks for scrolling this far.</text>
   <text x="{W / 2}" y="112" text-anchor="middle" class="small">LET'S BUILD SOMETHING THAT SHIPS → MANAVAGHERA.DEV</text>
 </g>"""

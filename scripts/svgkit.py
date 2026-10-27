@@ -4,17 +4,15 @@ from pathlib import Path
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
-BG = "#05060a"
-PANEL = "#0a0d14"
-LINE = "#1a2233"
-INK = "#e6edf7"
-MUTED = "#8b93a7"
-DIM = "#475569"
-CYAN = "#22d3ee"
-VIOLET = "#a78bfa"
-PINK = "#f472b6"
-GREEN = "#34d399"
-AMBER = "#fbbf24"
+BG = "#0a0a0a"        # ink black
+PANEL = "#111111"
+LINE = "#222222"
+INK = "#ededE6"        # bone white
+SOFT = "#bdbdb5"
+MUTED = "#8a8a85"
+DIM = "#55554f"
+ACCENT = "#c6ff3d"     # acid lime: the only loud colour
+HOT = "#ff6b2c"        # signal orange, used sparingly
 
 SANS = "'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
 MONO = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace"
