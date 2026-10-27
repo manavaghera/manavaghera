@@ -7,9 +7,10 @@ ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
 # Switch the whole profile's look by changing THEME, then run scripts/build_all.py.
 # Each theme is four colours; every other shade is mixed from them.
-THEME = os.environ.get("PROFILE_THEME", "ember")
+THEME = os.environ.get("PROFILE_THEME", "porcelain")
 THEMES = {
     #            background  text       accent     second accent
+    "porcelain": ("#101214", "#ecebe6", "#d6c3a1", "#a3b8a6"),  # graphite, champagne and sage
     "ember":    ("#0c0a09", "#f5efe6", "#ff6a13", "#ffc53d"),  # molten orange on charcoal
     "electric": ("#05070d", "#eef2ff", "#2f7bff", "#00e0ff"),  # electric blue
     "gold":     ("#0b1020", "#f4f1e8", "#f5c542", "#6b7cff"),  # midnight navy and gold
@@ -34,8 +35,6 @@ LINE2 = mix(BG, INK, .18)
 DIM = mix(BG, INK, .36)
 MUTED = mix(BG, INK, .55)
 SOFT = mix(BG, INK, .80)
-HEAT = [PANEL2] + [mix(PANEL2, ACCENT, t) for t in (.3, .55, .8, 1)]
-RAMP = [ACCENT, HOT, INK, MUTED, DIM, LINE2, LINE]  # categorical, loudest first
 
 SANS = "'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
 MONO = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace"

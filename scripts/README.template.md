@@ -69,24 +69,15 @@
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-<img src="assets/generated/tokens.svg" width="100%" alt="Tokens burned by Claude Code agents, with a 30-day daily chart" />
+<img src="assets/generated/tokens.svg" width="100%" alt="Tokens burned by my AI coding agents: Claude Code, Codex and Gemini CLI" />
 
 <br /><br />
 
-<img src="assets/generated/stats.svg" width="100%" alt="Live GitHub stats for manavaghera: contributions, streaks, contribution grid and languages" />
+<img src="assets/generated/stats.svg" width="100%" alt="GitHub stats for manavaghera: all-time commits, streaks and repos" />
 
-<br /><br />
-
-<img src="profile-3d-contrib/profile-3d.svg" width="100%" alt="3D city of my GitHub contributions" />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-light.svg" />
-  <img src="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-dark.svg" width="100%" alt="A snake eating the contribution graph" />
-</picture>
 
 <br /><br />
 
 <a href="https://www.manavaghera.dev"><img src="assets/footer.svg" width="100%" alt="Thanks for scrolling. Let's build something that ships." /></a>
 
-<sub><div align="center">Every graphic here is hand-built SVG, no GIFs. Stats, the 3D city and the snake refresh every 6 hours via <a href=".github/workflows/profile.yml">GitHub Actions</a>.</div></sub>
+<sub><div align="center">Every graphic here is hand-built SVG, no GIFs. Stats refresh every 6 hours via <a href=".github/workflows/profile.yml">GitHub Actions</a>.</div></sub>

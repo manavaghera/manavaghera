@@ -1,15 +1,17 @@
-"""Render assets/generated/tokens.svg from local Claude Code transcripts.
+"""Render assets/generated/tokens.svg from the AI coding agents' local logs:
+Claude Code transcripts, OpenAI Codex's thread database and Gemini CLI chats.
 
-Token counts only exist on this PC (~/.claude/projects), so this runs locally,
-not in Actions. Claude Code prunes old transcripts, so per-day totals are kept in
-assets/generated/tokens.json and the all-time number grows from the first run.
-Only daily aggregates leave the machine, never project names or content.
+Token counts only exist on this PC, so this runs locally, not in Actions.
+Claude Code prunes old transcripts, so totals are kept in
+assets/generated/tokens.json and the all-time number never shrinks.
+Only aggregate counts leave the machine, never project names or content.
 Run:  python scripts/build_tokens.py
 """
 import datetime as dt
 import glob
 import json
 import os
+import sqlite3
 from collections import Counter
 
 from build_stats import odometer, roll_css
@@ -47,13 +49,40 @@ def collect(root):
     return days
 
 
+def codex(db):
+    """Per-thread token totals that Codex itself records."""
+    if not os.path.exists(db):
+        return {}
+    with sqlite3.connect(f"file:{db}?mode=ro", uri=True) as con:
+        rows = con.execute("select id, tokens_used, updated_at from threads where tokens_used > 0").fetchall()
+    return {tid: {"tokens": n, "day": dt.date.fromtimestamp(ts).isoformat()} for tid, n, ts in rows}
+
+
+def gemini(root):
+    sessions = {}
+    for path in glob.glob(os.path.join(root, "**", "chats", "*.json"), recursive=True):
+        try:
+            chat = json.load(open(path, encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        n = sum((m.get("tokens") or {}).get("total", 0) for m in chat.get("messages", []))
+        if n:
+            day = (chat.get("startTime") or "")[:10] or dt.date.today().isoformat()
+            sessions[chat.get("sessionId", path)] = {"tokens": n, "day": day}
+    return sessions
+
+
 def merge(ledger_path, fresh):
-    """Keep the larger record per day: transcripts on disk shrink as they age out."""
+    """Keep the larger record per day/thread/session: logs on disk shrink as they age out."""
     ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {}
-    for day, rec in fresh.items():
-        if rec["tokens"] >= ledger.get(day, {}).get("tokens", 0):
-            ledger[day] = dict(rec)
-    ledger_path.write_text(json.dumps(dict(sorted(ledger.items())), indent=0))
+    if ledger and "claude_days" not in ledger:  # first format: Claude Code days at the top level
+        ledger = {"claude_days": ledger}
+    for source, records in fresh.items():
+        book = ledger.setdefault(source, {})
+        for key, rec in records.items():
+            if rec["tokens"] >= book.get(key, {}).get("tokens", 0):
+                book[key] = dict(rec)
+    ledger_path.write_text(json.dumps({k: dict(sorted(v.items())) for k, v in sorted(ledger.items())}, indent=0))
     return ledger
 
 
@@ -85,13 +114,20 @@ def chart(daily, x0, y0, w, h, days=30):
 
 def render(ledger):
     W, H, pad = 1200, 450, 48
-    daily = Counter({dt.date.fromisoformat(k): v["tokens"] for k, v in ledger.items()})
+    daily, per_tool = Counter(), Counter()
+    for day, rec in ledger.get("claude_days", {}).items():
+        daily[dt.date.fromisoformat(day)] += rec["tokens"]
+        per_tool["claude"] += rec["tokens"]
+    for source in ("codex_threads", "gemini_sessions"):
+        for rec in ledger.get(source, {}).values():
+            daily[dt.date.fromisoformat(rec["day"])] += rec["tokens"]
+            per_tool[source] += rec["tokens"]
     total = sum(daily.values())
     month = sum(v for k, v in daily.items() if k > dt.date.today() - dt.timedelta(days=30))
     since = min(daily)
     bars, best_day, best = chart(daily, 640, 130, W - pad - 640, 230)
-    tiles = [("LAST 30 DAYS", short(month)), ("AGENT REQUESTS", f"{sum(v['requests'] for v in ledger.values()):,}"),
-             ("BUSIEST DAY", short(max(daily.values()))), ("WRITTEN BY AI", short(sum(v['output'] for v in ledger.values())))]
+    tiles = [("CLAUDE CODE", short(per_tool["claude"])), ("OPENAI CODEX", short(per_tool["codex_threads"])),
+             ("LAST 30 DAYS", short(month)), ("BUSIEST DAY", short(best))]
     tile_svg = []
     for i, (label, value) in enumerate(tiles):
         x, y = pad + (i % 2) * 280, 296 + (i // 2) * 72
@@ -123,19 +159,22 @@ def render(ledger):
 <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="{BG}" stroke="{LINE}"/>
 <circle cx="{pad + 6}" cy="42" r="5" fill="{HOT}" class="dot"/>
 <text x="{pad + 22}" y="47" class="title">AI-NATIVE · TOKENS BURNED</text>
-<text x="{W - pad}" y="47" text-anchor="end" class="stamp">claude code agents · updated {stamp}</text>
+<text x="{W - pad}" y="47" text-anchor="end" class="stamp">claude code · codex · gemini cli · updated {stamp}</text>
 <rect x="{pad}" y="76" width="{W - 2 * pad}" height="1" fill="{PANEL}"/>
 <text x="{pad}" y="108" class="label">TOKENS PROCESSED SINCE {since:%b %Y}</text>
 <g clip-path="url(#bigclip)">{odometer(digits, pad, 200, .2, 96)}</g>
 <text x="{pad + len(digits) * 57.6 + 8:.1f}" y="200" class="unit" fill="url(#unitG)">{unit}</text>
-<text x="{pad}" y="248" class="sub">prompts, context and cache that AI agents chewed through while I built.</text>
+<text x="{pad}" y="248" class="sub">prompts, context and cache my AI coding agents chewed through.</text>
 {"".join(tile_svg)}
 <text x="640" y="108" class="label">DAILY BURN · LAST 30 DAYS</text>
 <text x="{W - pad}" y="108" text-anchor="end" class="axis">peak {short(best)} on {best_day:%b %d}</text>
 {bars}"""
-    return svg(W, H, body, f"{big} tokens processed by Claude Code agents; {short(month)} in the last 30 days", style)
+    return svg(W, H, body, f"{big} tokens processed by my AI coding agents; {short(month)} in the last 30 days", style)
 
 
 if __name__ == "__main__":
-    fresh = collect(os.path.expanduser("~/.claude/projects"))
+    home = os.path.expanduser("~")
+    fresh = {"claude_days": collect(os.path.join(home, ".claude", "projects")),
+             "codex_threads": codex(os.path.join(home, ".codex", "state_5.sqlite")),
+             "gemini_sessions": gemini(os.path.join(home, ".gemini", "tmp"))}
     write("generated/tokens.svg", render(merge(ASSETS / "generated" / "tokens.json", fresh)))

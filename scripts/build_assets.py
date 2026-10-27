@@ -73,11 +73,9 @@ def hero():
 .tick {{ font: 700 15px {MONO}; fill: {MUTED}; letter-spacing: 2px; }}
 .ticker {{ animation: scroll 38s linear infinite; }}
 .reveal {{ animation: reveal 1.4s cubic-bezier(.7,0,.2,1) both; }}
-.g1 {{ fill: {ACCENT}; opacity: 0; animation: glitch1 4.5s steps(1) infinite; }}
-.g2 {{ fill: {HOT}; opacity: 0; animation: glitch2 4.5s steps(1) infinite; }}
 .caret {{ animation: blink 1s steps(1) infinite; }}
 .live {{ animation: live 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }}
-.pulse line {{ stroke-dasharray: 9 191; stroke-dashoffset: -100; animation: signal 4s linear infinite; }}
+.pulse line {{ stroke-dasharray: 9 191; stroke-dashoffset: -100; animation: signal 6s linear infinite; }}
 .halo {{ opacity: .12; animation: halo 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }}
 .driftA {{ animation: driftA 14s ease-in-out infinite alternate; }}
 .driftB {{ animation: driftB 18s ease-in-out infinite alternate; }}
@@ -92,22 +90,7 @@ def hero():
 @keyframes driftA {{ to {{ transform: translate(120px, 60px); }} }}
 @keyframes driftB {{ to {{ transform: translate(-140px, -50px); }} }}
 @keyframes scan {{ from {{ transform: translateY(-140px); }} to {{ transform: translateY(460px); }} }}
-@keyframes glitch1 {{
-  0%, 100% {{ opacity: 0; }}
-  62% {{ opacity: .85; transform: translate(-5px, 2px); clip-path: inset(10% 0 62% 0); }}
-  64% {{ opacity: .85; transform: translate(4px, -1px); clip-path: inset(55% 0 20% 0); }}
-  66% {{ opacity: 0; }}
-  90% {{ opacity: .7; transform: translate(-3px, 0); clip-path: inset(30% 0 40% 0); }}
-  91% {{ opacity: 0; }}
-}}
-@keyframes glitch2 {{
-  0%, 100% {{ opacity: 0; }}
-  63% {{ opacity: .85; transform: translate(5px, -2px); clip-path: inset(40% 0 35% 0); }}
-  65% {{ opacity: .85; transform: translate(-4px, 1px); clip-path: inset(72% 0 5% 0); }}
-  67% {{ opacity: 0; }}
-  90.5% {{ opacity: .7; transform: translate(3px, 1px); clip-path: inset(5% 0 70% 0); }}
-  91.5% {{ opacity: 0; }}
-}}"""
+"""
     name = "MANAV AGHERA"
     name_attrs = 'x="72" y="214" textLength="660" lengthAdjust="spacingAndGlyphs"'
     body = f"""
@@ -134,8 +117,6 @@ def hero():
 
   <text x="72" y="104" class="prompt">~/manav $ whoami<tspan class="caret">█</tspan></text>
   <g class="reveal">
-    <text {name_attrs} class="name g1">{name}</text>
-    <text {name_attrs} class="name g2">{name}</text>
     <text {name_attrs} class="name"><tspan fill="{INK}">MANAV </tspan><tspan fill="url(#surname)">AGHERA</tspan></text>
   </g>
   <text x="74" y="258" class="role">AI / ML ENGINEER  ·  LLM SYSTEMS  ·  QUANT DEV</text>

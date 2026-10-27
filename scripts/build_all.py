@@ -6,13 +6,12 @@
 Live GitHub stats also rebuild here when GITHUB_TOKEN is set; otherwise
 the workflow refreshes them.
 """
-import json
 import os
 import subprocess
 import sys
 from pathlib import Path
 
-from svgkit import ACCENT, BG, HEAT, HOT, INK, MUTED, PANEL, THEME
+from svgkit import ACCENT, HOT, INK, PANEL, THEME
 
 HERE = Path(__file__).resolve().parent
 
@@ -27,15 +26,6 @@ def readme():
     print("wrote README.md")
 
 
-def settings_3d():
-    """Colours for the 3D contribution city action, kept in step with the theme."""
-    cfg = {"type": "normal", "fileName": "profile-3d.svg", "backgroundColor": BG, "foregroundColor": INK,
-           "strongColor": ACCENT, "weakColor": MUTED, "radarColor": ACCENT, "growingAnimation": True,
-           "contribColors": HEAT}
-    (HERE / "profile-3d.json").write_text(json.dumps(cfg, indent=2) + "\n")
-    print("wrote scripts/profile-3d.json")
-
-
 if __name__ == "__main__":
     print(f"theme: {THEME}")
     steps = ["build_assets.py", "build_cards.py", "build_stack.py", "build_timeline.py", "build_tokens.py"]
@@ -43,5 +33,4 @@ if __name__ == "__main__":
         steps.append("build_stats.py")
     for step in steps:
         subprocess.run([sys.executable, str(HERE / step)], check=True)
-    settings_3d()
     readme()
