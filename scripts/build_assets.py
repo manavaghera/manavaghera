@@ -4,7 +4,7 @@ Run:  python scripts/build_assets.py
 """
 import random
 
-from svgkit import (ACCENT, BG, DIM, HOT, INK, LINE, MONO, MUTED, PANEL, SANS, SOFT, esc, pct, svg, write)
+from svgkit import (ACCENT, BG, DIM, HOT, INK, LINE, LINE2, MONO, MUTED, PANEL, PANEL2, SANS, SOFT, esc, pct, svg, write)
 
 random.seed(7)
 
@@ -55,7 +55,7 @@ def ticker(y, width):
     copies = "".join(
         f'<text x="{i * run}" y="{y}" textLength="{run - 30}" lengthAdjust="spacing" class="tick">{spans}</text>'
         for i in range(2))
-    return (f'<rect x="0" y="{y - 30}" width="{width}" height="48" fill="#0d0d0d"/>'
+    return (f'<rect x="0" y="{y - 30}" width="{width}" height="48" fill="{PANEL}"/>'
             f'<line x1="0" y1="{y - 30}" x2="{width}" y2="{y - 30}" stroke="{LINE}"/>'
             f'<g class="ticker">{copies}</g>')
 
@@ -66,11 +66,11 @@ def hero():
 .tiny {{ font: 500 13px {MONO}; fill: {DIM}; }}
 .prompt {{ font: 500 18px {MONO}; fill: {ACCENT}; }}
 .name {{ font: 800 96px {SANS}; letter-spacing: -2px; }}
-.role {{ font: 600 17px {MONO}; fill: #d6d6cf; letter-spacing: 3px; animation: rise 1.2s .5s cubic-bezier(.2,.8,.2,1) both; }}
+.role {{ font: 600 17px {MONO}; fill: {SOFT}; letter-spacing: 3px; animation: rise 1.2s .5s cubic-bezier(.2,.8,.2,1) both; }}
 .copy {{ font: 400 18px {SANS}; fill: {MUTED}; animation: rise 1.2s .8s cubic-bezier(.2,.8,.2,1) both; }}
 .pill {{ animation: rise 1.2s 1.1s cubic-bezier(.2,.8,.2,1) both; }}
 .pilltext {{ font: 600 14px {MONO}; fill: {INK}; }}
-.tick {{ font: 700 15px {MONO}; fill: #8a8a85; letter-spacing: 2px; }}
+.tick {{ font: 700 15px {MONO}; fill: {MUTED}; letter-spacing: 2px; }}
 .ticker {{ animation: scroll 38s linear infinite; }}
 .reveal {{ animation: reveal 1.4s cubic-bezier(.7,0,.2,1) both; }}
 .g1 {{ fill: {ACCENT}; opacity: 0; animation: glitch1 4.5s steps(1) infinite; }}
@@ -114,10 +114,13 @@ def hero():
 <defs>
   <clipPath id="frame"><rect width="{W}" height="{H}" rx="22"/></clipPath>
   <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-    <circle cx="2" cy="2" r="1.1" fill="#1e1e1c"/>
+    <circle cx="2" cy="2" r="1.1" fill="{LINE}"/>
   </pattern>
   <radialGradient id="glowA"><stop offset="0" stop-color="{ACCENT}" stop-opacity=".13"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></radialGradient>
   <radialGradient id="glowB"><stop offset="0" stop-color="{HOT}" stop-opacity=".10"/><stop offset="1" stop-color="{HOT}" stop-opacity="0"/></radialGradient>
+  <linearGradient id="surname" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="732" y2="0">
+    <stop offset="0" stop-color="{ACCENT}"/><stop offset="1" stop-color="{HOT}"/>
+  </linearGradient>
   <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="{ACCENT}" stop-opacity="0"/><stop offset=".5" stop-color="{ACCENT}" stop-opacity=".045"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/>
   </linearGradient>
@@ -133,13 +136,13 @@ def hero():
   <g class="reveal">
     <text {name_attrs} class="name g1">{name}</text>
     <text {name_attrs} class="name g2">{name}</text>
-    <text {name_attrs} class="name"><tspan fill="{INK}">MANAV </tspan><tspan fill="{ACCENT}">AGHERA</tspan></text>
+    <text {name_attrs} class="name"><tspan fill="{INK}">MANAV </tspan><tspan fill="url(#surname)">AGHERA</tspan></text>
   </g>
   <text x="74" y="258" class="role">AI / ML ENGINEER  ·  LLM SYSTEMS  ·  QUANT DEV</text>
   <text x="74" y="300" class="copy">Final-year CSE student. I build AI that shows its work —</text>
   <text x="74" y="326" class="copy">RAG systems that cite sources, autonomous agents, quant tooling.</text>
   <g class="pill">
-    <rect x="72" y="345" width="392" height="34" rx="17" fill="#121212" stroke="#2a2a2a"/>
+    <rect x="72" y="345" width="392" height="34" rx="17" fill="{PANEL2}" stroke="{LINE2}"/>
     <circle cx="94" cy="362" r="5" fill="{ACCENT}" class="live"/>
     <circle cx="94" cy="362" r="5" fill="{ACCENT}"/>
     <text x="110" y="367" class="pilltext">open to internships &amp; collabs · India</text>
@@ -148,7 +151,7 @@ def hero():
   {neural_net(830, 70, 300, 230)}
   {ticker(H - 18, W)}
 </g>
-<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="none" stroke="#222222"/>"""
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="none" stroke="{LINE}"/>"""
     write("hero.svg", svg(W, H, body, "Manav Aghera — AI/ML engineer, LLM systems, quant dev", style))
 
 
@@ -206,7 +209,7 @@ def terminal():
         elif kind == "bar":
             bw, dur = 560, 2.4
             rows.append(
-                f'<g class="{cls}"><rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="#161616" stroke="#2a2a2a"/>'
+                f'<g class="{cls}"><rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="{PANEL2}" stroke="{LINE2}"/>'
                 f'<rect x="{x0}" y="{y - 15}" width="{bw}" height="18" rx="4" fill="url(#barG)" class="fill{i}"/>'
                 f'<text x="{x0 + bw + 20}" y="{y}" class="t"><tspan fill="{G}">✓ deployed</tspan>'
                 f'<tspan fill="{M}">  idea → prototype → production</tspan></text></g>')
@@ -231,12 +234,12 @@ def terminal():
     body = f"""
 <defs>
   <linearGradient id="barG" x1="0" x2="1"><stop offset="0" stop-color="{C}"/><stop offset=".85" stop-color="{C}"/><stop offset="1" stop-color="{P}"/></linearGradient>
-  <linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#171717"/><stop offset="1" stop-color="#121212"/></linearGradient>
+  <linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="{PANEL2}"/><stop offset="1" stop-color="{PANEL}"/></linearGradient>
 </defs>
-<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="16" fill="{PANEL}" stroke="#262626"/>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="16" fill="{PANEL}" stroke="{LINE2}"/>
 <path d="M16 .5 H{W - 16} a15.5 15.5 0 0 1 15.5 15.5 V46 H.5 V16 A15.5 15.5 0 0 1 16 .5z" fill="url(#chrome)"/>
-<line x1="0" y1="46" x2="{W}" y2="46" stroke="#262626"/>
-<circle cx="28" cy="23" r="6" fill="#2e2e2c"/><circle cx="48" cy="23" r="6" fill="#2e2e2c"/><circle cx="68" cy="23" r="6" fill="{ACCENT}"/>
+<line x1="0" y1="46" x2="{W}" y2="46" stroke="{LINE2}"/>
+<circle cx="28" cy="23" r="6" fill="{LINE2}"/><circle cx="48" cy="23" r="6" fill="{LINE2}"/><circle cx="68" cy="23" r="6" fill="{ACCENT}"/>
 <text x="{W / 2}" y="28" text-anchor="middle" class="title">manav@neural-core: ~/profile — zsh</text>
 {"".join(rows)}"""
     write("terminal.svg", svg(W, H, body, "Terminal: whoami, focus areas, shipped projects and status", style))

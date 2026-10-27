@@ -20,27 +20,49 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # PROFILE_TOKEN (optional, read-only PAT) lets private repos and private
+      # contributions count; without it only public data is visible.
       - name: Render live stats
         run: python scripts/build_stats.py "${{ github.repository_owner }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+      - name: Render 3D contribution city
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: scripts/profile-3d.json
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/generated
-          git diff --cached --quiet || git commit -m "chore: refresh live stats"
+          git add assets/generated profile-3d-contrib
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh live stats"
+          git pull --rebase origin main
           git push
 
   snake:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Theme colours
+        id: c
+        working-directory: scripts
+        run: |
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          from svgkit import ACCENT, HEAT, mix
+          light = ["#ebedf0"] + [mix("#ebedf0", ACCENT, t) for t in (.35, .6, .85)] + [mix(ACCENT, "#000000", .25)]
+          print(f"dark=palette=github-dark&color_snake={ACCENT}&color_dots={','.join(HEAT)}")
+          print(f"light=color_snake={mix(ACCENT, '#000000', .35)}&color_dots={','.join(light)}")
+          EOF
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake-dark.svg?palette=github-dark&color_snake=#c6ff3d&color_dots=#161616,#2c3a10,#557318,#8fc02a,#c6ff3d
-            dist/snake-light.svg?color_snake=#ff6b2c&color_dots=#ebedf0,#d9f99d,#a3e635,#65a30d,#3f6212
+            dist/snake-dark.svg?${{ steps.c.outputs.dark }}
+            dist/snake-light.svg?${{ steps.c.outputs.light }}
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output

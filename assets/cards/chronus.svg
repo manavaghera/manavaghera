@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="CHRONUS: A consent-first memory archive you can talk to. Every answer cites its source, and it says “I don&#x27;t know” when the archive is silent.">
 <title>CHRONUS: A consent-first memory archive you can talk to. Every answer cites its source, and it says “I don&#x27;t know” when the archive is silent.</title>
 <style>
-.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #c6ff3d; letter-spacing: 2px; }
-.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #55554f; letter-spacing: 2.5px; }
-.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #ededE6; letter-spacing: -.5px; }
-.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #8a8a85; }
-.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #d6d6cf; }
-.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #c6ff3d; letter-spacing: 1px; }
+.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #ff6a13; letter-spacing: 2px; }
+.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #605c59; letter-spacing: 2.5px; }
+.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #f5efe6; letter-spacing: -.5px; }
+.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #8c8883; }
+.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #c6c1ba; }
+.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #ff6a13; letter-spacing: 1px; }
 .in { animation: in .9s cubic-bezier(.2,.8,.2,1) both; }
 .spin { animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }
 .slow { animation-duration: 12s; }
@@ -32,16 +32,16 @@
 
 <defs>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#c6ff3d"/><stop offset=".45" stop-color="#c6ff3d" stop-opacity=".05"/>
-    <stop offset=".55" stop-color="#c6ff3d" stop-opacity=".05"/><stop offset="1" stop-color="#c6ff3d"/>
+    <stop offset="0" stop-color="#ff6a13"/><stop offset=".45" stop-color="#ff6a13" stop-opacity=".05"/>
+    <stop offset=".55" stop-color="#ff6a13" stop-opacity=".05"/><stop offset="1" stop-color="#ff6a13"/>
     <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
   </linearGradient>
-  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#c6ff3d" stop-opacity=".10"/><stop offset=".6" stop-color="#c6ff3d" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#ff6a13" stop-opacity=".10"/><stop offset=".6" stop-color="#ff6a13" stop-opacity="0"/></radialGradient>
   <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
   <clipPath id="cc"><rect x="1" y="1" width="598" height="298" rx="20"/></clipPath>
 </defs>
 <g clip-path="url(#cc)">
-  <rect width="600" height="300" fill="#0a0a0a"/>
+  <rect width="600" height="300" fill="#0c0a09"/>
   <rect width="600" height="300" fill="url(#glow)"/>
   <rect x="0" y="0" width="260" height="300" fill="url(#sh)" class="sheen" transform="skewX(-20)"/>
 </g>
@@ -50,8 +50,8 @@
 <text x="72" y="52" class="tag">RAG · DIGITAL LEGACY</text>
 <text x="36" y="114" class="name in">CHRONUS</text>
 <text x="36" y="158" class="blurb in" style="animation-delay:.25s">A consent-first memory archive you can talk to. Every answer</text><text x="36" y="182" class="blurb in" style="animation-delay:.25s">cites its source, and it says “I don&#x27;t know” when the</text><text x="36" y="206" class="blurb in" style="animation-delay:.25s">archive is silent.</text>
-<rect x="36" y="240" width="71" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="79" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/><text x="154.1" y="259" text-anchor="middle" class="chip">FastAPI</text><rect x="201.39999999999998" y="240" width="63" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/><text x="232.9" y="259" text-anchor="middle" class="chip">React</text><rect x="272.4" y="240" width="86" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/><text x="315.6" y="259" text-anchor="middle" class="chip">ChromaDB</text><rect x="366.79999999999995" y="240" width="79" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/><text x="406.1" y="259" text-anchor="middle" class="chip">PyTorch</text>
+<rect x="36" y="240" width="71" height="28" rx="14" fill="#1c1a18" stroke="#363331"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="79" height="28" rx="14" fill="#1c1a18" stroke="#363331"/><text x="154.1" y="259" text-anchor="middle" class="chip">FastAPI</text><rect x="201.39999999999998" y="240" width="63" height="28" rx="14" fill="#1c1a18" stroke="#363331"/><text x="232.9" y="259" text-anchor="middle" class="chip">React</text><rect x="272.4" y="240" width="86" height="28" rx="14" fill="#1c1a18" stroke="#363331"/><text x="315.6" y="259" text-anchor="middle" class="chip">ChromaDB</text><rect x="366.79999999999995" y="240" width="79" height="28" rx="14" fill="#1c1a18" stroke="#363331"/><text x="406.1" y="259" text-anchor="middle" class="chip">PyTorch</text>
 <text x="542" y="259" text-anchor="end" class="cta">VIEW REPO</text>
 <text x="550" y="260" class="cta arrow">↗</text>
-<circle cx="520" cy="74" r="30" fill="none" stroke="#c6ff3d" stroke-opacity=".25" stroke-width="2"/><circle cx="520" cy="74" r="30" fill="none" stroke="#c6ff3d" stroke-width="2.5" stroke-dasharray="40 149" class="spin"/><line x1="520" y1="74" x2="520" y2="56" stroke="#c6ff3d" stroke-width="2.5" stroke-linecap="round" class="spin slow"/><line x1="520" y1="74" x2="532" y2="74" stroke="#c6ff3d" stroke-width="2.5" stroke-linecap="round"/><circle cx="520" cy="74" r="3.5" fill="#c6ff3d"/>
+<circle cx="520" cy="74" r="30" fill="none" stroke="#ff6a13" stroke-opacity=".25" stroke-width="2"/><circle cx="520" cy="74" r="30" fill="none" stroke="#ff6a13" stroke-width="2.5" stroke-dasharray="40 149" class="spin"/><line x1="520" y1="74" x2="520" y2="56" stroke="#ff6a13" stroke-width="2.5" stroke-linecap="round" class="spin slow"/><line x1="520" y1="74" x2="532" y2="74" stroke="#ff6a13" stroke-width="2.5" stroke-linecap="round"/><circle cx="520" cy="74" r="3.5" fill="#ff6a13"/>
 </svg>

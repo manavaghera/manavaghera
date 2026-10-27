@@ -2,7 +2,7 @@
 
 Run:  python scripts/build_cards.py
 """
-from svgkit import ACCENT, BG, DIM, HOT, INK, MONO, MUTED, SANS, esc, svg, wrap, write
+from svgkit import (ACCENT, BG, DIM, HOT, INK, LINE2, MONO, MUTED, PANEL2, SANS, SOFT, esc, svg, wrap, write)
 
 PROJECTS = [
     dict(slug="chronus", name="CHRONUS", tag="RAG · DIGITAL LEGACY", color=ACCENT, glyph="clock",
@@ -77,7 +77,7 @@ def card(index, p):
 .tag {{ font: 600 12px {MONO}; fill: {DIM}; letter-spacing: 2.5px; }}
 .name {{ font: 800 34px {SANS}; fill: {INK}; letter-spacing: -.5px; }}
 .blurb {{ font: 400 16px {SANS}; fill: {MUTED}; }}
-.chip {{ font: 600 12.5px {MONO}; fill: #d6d6cf; }}
+.chip {{ font: 600 12.5px {MONO}; fill: {SOFT}; }}
 .cta {{ font: 700 13px {MONO}; fill: {c}; letter-spacing: 1px; }}
 .in {{ animation: in .9s cubic-bezier(.2,.8,.2,1) both; }}
 .spin {{ animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }}
@@ -103,7 +103,7 @@ def card(index, p):
     chips, x = "", 36
     for chip in p["chips"]:
         w = len(chip) * 7.8 + 24
-        chips += (f'<rect x="{x}" y="{H - 60}" width="{w:.0f}" height="28" rx="14" fill="#141414" stroke="#2a2a2a"/>'
+        chips += (f'<rect x="{x}" y="{H - 60}" width="{w:.0f}" height="28" rx="14" fill="{PANEL2}" stroke="{LINE2}"/>'
                   f'<text x="{x + w / 2:.1f}" y="{H - 41}" text-anchor="middle" class="chip">{esc(chip)}</text>')
         x += w + 8
     body = f"""

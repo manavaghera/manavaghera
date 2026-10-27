@@ -1,18 +1,41 @@
 """Shared palette, fonts and helpers for the profile's hand-built SVGs."""
+import os
 from html import escape
 from pathlib import Path
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
-BG = "#0a0a0a"        # ink black
-PANEL = "#111111"
-LINE = "#222222"
-INK = "#ededE6"        # bone white
-SOFT = "#bdbdb5"
-MUTED = "#8a8a85"
-DIM = "#55554f"
-ACCENT = "#c6ff3d"     # acid lime: the only loud colour
-HOT = "#ff6b2c"        # signal orange, used sparingly
+# Switch the whole profile's look by changing THEME, then run scripts/build_all.py.
+# Each theme is four colours; every other shade is mixed from them.
+THEME = os.environ.get("PROFILE_THEME", "ember")
+THEMES = {
+    #            background  text       accent     second accent
+    "ember":    ("#0c0a09", "#f5efe6", "#ff6a13", "#ffc53d"),  # molten orange on charcoal
+    "electric": ("#05070d", "#eef2ff", "#2f7bff", "#00e0ff"),  # electric blue
+    "gold":     ("#0b1020", "#f4f1e8", "#f5c542", "#6b7cff"),  # midnight navy and gold
+    "red":      ("#000000", "#ffffff", "#ff1f3d", "#8a8a8a"),  # black and racing red
+    "ice":      ("#0f141c", "#e5e9f0", "#88c0d0", "#a3be8c"),  # nord
+    "lime":     ("#0a0a0a", "#ededE6", "#c6ff3d", "#ff6b2c"),  # acid lime
+}
+
+
+def mix(a, b, t):
+    """Blend hex colour a toward b by t (0..1)."""
+    ca = [int(a[i:i + 2], 16) for i in (1, 3, 5)]
+    cb = [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(x + (y - x) * t):02x}" for x, y in zip(ca, cb))
+
+
+BG, INK, ACCENT, HOT = THEMES[THEME]
+PANEL = mix(BG, INK, .04)
+PANEL2 = mix(BG, INK, .07)
+LINE = mix(BG, INK, .12)
+LINE2 = mix(BG, INK, .18)
+DIM = mix(BG, INK, .36)
+MUTED = mix(BG, INK, .55)
+SOFT = mix(BG, INK, .80)
+HEAT = [PANEL2] + [mix(PANEL2, ACCENT, t) for t in (.3, .55, .8, 1)]
+RAMP = [ACCENT, HOT, INK, MUTED, DIM, LINE2, LINE]  # categorical, loudest first
 
 SANS = "'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
 MONO = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace"
