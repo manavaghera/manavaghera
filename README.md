@@ -1,26 +1,75 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) My name is Manav Aghera
-=====================================================================================================================================
+<div align="center">
 
-AI & ML Engineer with data science + Quantitative DEV
------------------------------------------------------
+<a href="https://www.manavaghera.dev">
+  <img src="assets/hero.svg" width="100%" alt="Manav Aghera: AI/ML engineer building LLM systems, autonomous agents and quant tooling" />
+</a>
 
-I’m an aspiring AI AND ML Developer with a strong interest in LLM AND  machine learning, and data science. Currently in the learning phase, I’m focused on building my skills and exploring projects that connect technology with problem-solving. While I have limited experience, I’m eager to grow through hands-on practice and continuous learning.
+<br />
 
-* ✅  My website portfolio - www.manavaghera.dev
-* 🌍  I'm based in INDIA
-* ✉️  You can contact me at [manavaghera@yahoo.com](mailto:manavaghera@yahoo.com)
-* 🧠  I'm currently learning Ai and ML 
-* 👥  I'm looking to collaborate on AI and Ml related projects and Any startups
+<a href="https://www.manavaghera.dev">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=22D3EE&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
+</a>
 
-<p align="left">
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" alt="Git" title="Git" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React" title="React" width="36" height="36" /></a><a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" alt="TailwindCSS" title="TailwindCSS" width="36" height="36" /></a><a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg" alt="Vite" title="Vite" width="36" height="36" /></a><a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" alt="MongoDB" title="MongoDB" width="36" height="36" /></a><a href="https://solana.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/solana-colored.svg" alt="Solana" title="Solana" width="36" height="36" /></a><a href="https://metamask.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/metamask-colored.svg" alt="MetaMask" title="MetaMask" width="36" height="36" /></a>
+<br /><br />
+
+<a href="https://www.manavaghera.dev"><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-22d3ee?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=05060a" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/manav-aghera"><img src="https://img.shields.io/badge/linkedin-manav--aghera-a78bfa?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=05060a" alt="LinkedIn" /></a>
+<a href="mailto:manavaghera@yahoo.com"><img src="https://img.shields.io/badge/email-say%20hello-f472b6?style=for-the-badge&logo=maildotru&logoColor=white&labelColor=05060a" alt="Email" /></a>
+<img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=34d399&label=PROFILE+VIEWS" alt="Profile views" />
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<img src="assets/terminal.svg" width="100%" alt="Terminal: Manav Aghera, AI/ML engineer and final-year CSE student in India. Building LLM systems that cite sources and autonomous agents; exploring quant research, MCP tooling and eval pipelines; open to internships and startup collabs." />
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<h2 align="center">Featured builds</h2>
+
+<p align="center">
+  <a href="https://github.com/manavaghera/CHRONUS"><img src="assets/cards/chronus.svg" width="49%" alt="CHRONUS: a consent-first memory archive you can talk to" /></a>
+  <a href="https://github.com/manavaghera/LLM-NEWS-"><img src="assets/cards/newssense.svg" width="49%" alt="NewsSense: AI news with visible evidence" /></a>
+  <a href="https://github.com/manavaghera/Autonomous-Agent-Kaggle"><img src="assets/cards/kaggle-agent.svg" width="49%" alt="Autonomous Agent: Kaggle top 1%" /></a>
+  <a href="https://github.com/manavaghera/Twitch-Bulk-Downloader"><img src="assets/cards/clip-studio.svg" width="49%" alt="Clip Studio: bulk Twitch clip downloader" /></a>
+  <a href="https://github.com/manavaghera/Multi-agent-blog"><img src="assets/cards/autonomous-content.svg" width="49%" alt="AutonomousContent: self-healing multi-agent publishing" /></a>
+  <a href="https://github.com/manavaghera/mcp-demo"><img src="assets/cards/mcp-demo.svg" width="49%" alt="MCP Demo: Model Context Protocol end to end" /></a>
 </p>
 
-### Socials
+<img src="assets/divider.svg" width="100%" alt="" />
 
-<p align="left"> <a href="https://www.github.com/manavaghera" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub" title="GitHub" /> </picture> </a> <a href="https://www.linkedin.com/in/manav-aghera" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" alt="LinkedIn" title="LinkedIn" /> </picture> </a> <a href="https://discord.com/users/manav._.g" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" width="32" height="32" alt="Discord" title="Discord" /> </picture> </a></p>
-### Badges
+<h2 align="center">Arsenal</h2>
 
-<b>My GitHub Stats</b>
+<div align="center">
 
-<a href="http://www.github.com/manavaghera"><img src="https://github-readme-stats.vercel.app/api?username=manavaghera&show_icons=true&hide=&count_private=true&title_color=ffffff&text_color=ffffff&icon_color=14b8a6&bg_color=171717&hide_border=true&show_icons=true" alt="manavaghera's GitHub stats" /></a>
+**AI / ML**<br />
+<img src="https://skillicons.dev/icons?i=py,pytorch,sklearn,anaconda&theme=dark" alt="Python, PyTorch, scikit-learn, Anaconda" />
+
+**Backend & data**<br />
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,mongodb,docker&theme=dark" alt="FastAPI, Node.js, MongoDB, Docker" />
+
+**Frontend**<br />
+<img src="https://skillicons.dev/icons?i=react,ts,js,vite,tailwind&theme=dark" alt="React, TypeScript, JavaScript, Vite, Tailwind" />
+
+**Tooling**<br />
+<img src="https://skillicons.dev/icons?i=git,github,githubactions,vercel,vscode&theme=dark" alt="Git, GitHub, GitHub Actions, Vercel, VS Code" />
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<img src="assets/generated/stats.svg" width="100%" alt="Live GitHub stats for manavaghera: contributions, streaks, contribution grid and languages" />
+
+<br /><br />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-light.svg" />
+  <img src="https://raw.githubusercontent.com/manavaghera/manavaghera/output/snake-dark.svg" width="100%" alt="A snake eating the contribution graph" />
+</picture>
+
+<br /><br />
+
+<a href="https://www.manavaghera.dev"><img src="assets/footer.svg" width="100%" alt="Thanks for scrolling. Let's build something that ships." /></a>
+
+<sub><div align="center">Every graphic here is hand-built SVG, no GIFs. Stats and the snake refresh every 6 hours via <a href=".github/workflows/profile.yml">GitHub Actions</a>.</div></sub>

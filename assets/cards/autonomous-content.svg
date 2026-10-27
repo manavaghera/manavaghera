@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="AutonomousContent: A self-healing editorial team of AI agents that researches, writes and validates, rewriting until the article clears the bar.">
+<title>AutonomousContent: A self-healing editorial team of AI agents that researches, writes and validates, rewriting until the article clears the bar.</title>
+<style>
+.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #10b981; letter-spacing: 2px; }
+.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #475569; letter-spacing: 2.5px; }
+.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #e6edf7; letter-spacing: -.5px; }
+.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #8b93a7; }
+.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #cbd5e1; }
+.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #10b981; letter-spacing: 1px; }
+.in { animation: in .9s cubic-bezier(.2,.8,.2,1) both; }
+.spin { animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }
+.slow { animation-duration: 12s; }
+.ping { animation: ping 3s ease-out infinite; transform-box: fill-box; transform-origin: center; opacity: 0; }
+.grow { animation: grow 2.4s cubic-bezier(.6,0,.2,1) infinite alternate; transform-box: fill-box; transform-origin: bottom; }
+.beat { animation: beat 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.scrub { stroke-dasharray: 68; animation: scrub 4s linear infinite; }
+.flow { stroke-dasharray: 30 70; animation: flow 1.6s linear infinite; }
+.sheen { animation: sheen 6s ease-in-out infinite; }
+.arrow { animation: nudge 1.6s ease-in-out infinite; }
+@keyframes in { from { opacity: 0; transform: translateY(10px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes ping { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(4.5); } }
+@keyframes grow { from { transform: scaleY(.25); } }
+@keyframes beat { 50% { transform: scale(1.18); } }
+@keyframes scrub { from { stroke-dashoffset: 68; } to { stroke-dashoffset: 0; } }
+@keyframes flow { to { stroke-dashoffset: -100; } }
+@keyframes sheen { 0%, 60% { transform: translateX(-700px); } 100% { transform: translateX(700px); } }
+@keyframes nudge { 50% { transform: translate(3px, -3px); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}</style>
+
+<defs>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#10b981"/><stop offset=".45" stop-color="#10b981" stop-opacity=".05"/>
+    <stop offset=".55" stop-color="#10b981" stop-opacity=".05"/><stop offset="1" stop-color="#10b981"/>
+    <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#10b981" stop-opacity=".22"/><stop offset=".6" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <clipPath id="cc"><rect x="1" y="1" width="598" height="298" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#cc)">
+  <rect width="600" height="300" fill="#05060a"/>
+  <rect width="600" height="300" fill="url(#glow)"/>
+  <rect x="0" y="0" width="260" height="300" fill="url(#sh)" class="sheen" transform="skewX(-20)"/>
+</g>
+<rect x="1" y="1" width="598" height="298" rx="20" fill="none" stroke="url(#edge)" stroke-width="2"/>
+<text x="36" y="52" class="idx">05</text>
+<text x="72" y="52" class="tag">MULTI-AGENT</text>
+<text x="36" y="114" class="name in">AutonomousContent</text>
+<text x="36" y="158" class="blurb in" style="animation-delay:.25s">A self-healing editorial team of AI agents that researches,</text><text x="36" y="182" class="blurb in" style="animation-delay:.25s">writes and validates, rewriting until the article clears the</text><text x="36" y="206" class="blurb in" style="animation-delay:.25s">bar.</text>
+<rect x="36" y="240" width="71" height="28" rx="14" fill="#0e1422" stroke="#222c40"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="102" height="28" rx="14" fill="#0e1422" stroke="#222c40"/><text x="165.8" y="259" text-anchor="middle" class="chip">OpenRouter</text><rect x="224.8" y="240" width="63" height="28" rx="14" fill="#0e1422" stroke="#222c40"/><text x="256.3" y="259" text-anchor="middle" class="chip">arXiv</text><rect x="295.8" y="240" width="71" height="28" rx="14" fill="#0e1422" stroke="#222c40"/><text x="331.2" y="259" text-anchor="middle" class="chip">Agents</text>
+<text x="542" y="259" text-anchor="end" class="cta">VIEW REPO</text>
+<text x="550" y="260" class="cta arrow">↗</text>
+<circle cx="520" cy="74" r="9" fill="#10b981"/><circle cx="520" cy="74" r="28" fill="none" stroke="#10b981" stroke-opacity=".25" stroke-dasharray="3 5"/><g class="spin" style="animation-duration:4.0s;animation-delay:-0s"><circle cx="548" cy="74" r="5" fill="#10b981" fill-opacity="1.0"/></g><g class="spin" style="animation-duration:5.5s;animation-delay:-1s"><circle cx="548" cy="74" r="5" fill="#10b981" fill-opacity="0.75"/></g><g class="spin" style="animation-duration:7.0s;animation-delay:-2s"><circle cx="548" cy="74" r="5" fill="#10b981" fill-opacity="0.5"/></g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-label="Terminal: whoami, focus areas, shipped projects and status">
+<title>Terminal: whoami, focus areas, shipped projects and status</title>
+<style>
+.t { font: 500 17px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; white-space: pre; }
+.title { font: 600 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #475569; }
+.caret { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.l0 { animation: k0 18.0s linear infinite; }
+@keyframes k0 { 0%, 1.111% { clip-path: inset(0 100% 0 0); } 1.167% { clip-path: inset(0 calc(100% - 14ch) 0 0); } 3.333% { clip-path: inset(0 calc(100% - 14ch) 0 0); animation-timing-function: steps(6, end); } 5.667%, 95% { clip-path: inset(0 0 0 0); } 97%, 100% { clip-path: inset(0 100% 0 0); } }
+.l1 { animation: f1 18.0s linear infinite; }
+@keyframes f1 { 0%, 8.167% { opacity: 0; transform: translateX(-6px); } 9.556%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l3 { animation: k3 18.0s linear infinite; }
+@keyframes k3 { 0%, 6.944% { clip-path: inset(0 100% 0 0); } 7.000% { clip-path: inset(0 calc(100% - 14ch) 0 0); } 9.167% { clip-path: inset(0 calc(100% - 14ch) 0 0); animation-timing-function: steps(14, end); } 14.611%, 95% { clip-path: inset(0 0 0 0); } 97%, 100% { clip-path: inset(0 100% 0 0); } }
+.l4 { animation: f4 18.0s linear infinite; }
+@keyframes f4 { 0%, 17.111% { opacity: 0; transform: translateX(-6px); } 18.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l5 { animation: f5 18.0s linear infinite; }
+@keyframes f5 { 0%, 18.111% { opacity: 0; transform: translateX(-6px); } 19.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l6 { animation: f6 18.0s linear infinite; }
+@keyframes f6 { 0%, 19.111% { opacity: 0; transform: translateX(-6px); } 20.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l7 { animation: f7 18.0s linear infinite; }
+@keyframes f7 { 0%, 20.111% { opacity: 0; transform: translateX(-6px); } 21.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l8 { animation: f8 18.0s linear infinite; }
+@keyframes f8 { 0%, 21.111% { opacity: 0; transform: translateX(-6px); } 22.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l9 { animation: f9 18.0s linear infinite; }
+@keyframes f9 { 0%, 22.111% { opacity: 0; transform: translateX(-6px); } 23.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l10 { animation: f10 18.0s linear infinite; }
+@keyframes f10 { 0%, 23.111% { opacity: 0; transform: translateX(-6px); } 24.500%, 95% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+.l12 { animation: k12 18.0s linear infinite; }
+@keyframes k12 { 0%, 21.889% { clip-path: inset(0 100% 0 0); } 21.944% { clip-path: inset(0 calc(100% - 14ch) 0 0); } 24.111% { clip-path: inset(0 calc(100% - 14ch) 0 0); animation-timing-function: steps(18, end); } 31.111%, 95% { clip-path: inset(0 0 0 0); } 97%, 100% { clip-path: inset(0 100% 0 0); } }
+.l13 { animation: f13 18.0s linear infinite; }
+@keyframes f13 { 0%, 33.611% { opacity: 0; } 34.167%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
+.fill13 { transform-box: fill-box; transform-origin: left; animation: s13 18.0s linear infinite; }
+@keyframes s13 { 0%, 33.611% { transform: scaleX(0); animation-timing-function: cubic-bezier(.6,0,.2,1); } 46.944%, 100% { transform: scaleX(1); } }
+.l15 { animation: f15 18.0s linear infinite; }
+@keyframes f15 { 0%, 49.167% { opacity: 0; } 49.222%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}</style>
+
+<defs>
+  <linearGradient id="barG" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".6" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+  <linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#0b1019"/></linearGradient>
+</defs>
+<rect x=".5" y=".5" width="1199" height="569" rx="16" fill="#0a0d14" stroke="#1f2a3d"/>
+<path d="M16 .5 H1184 a15.5 15.5 0 0 1 15.5 15.5 V46 H.5 V16 A15.5 15.5 0 0 1 16 .5z" fill="url(#chrome)"/>
+<line x1="0" y1="46" x2="1200" y2="46" stroke="#1f2a3d"/>
+<circle cx="28" cy="23" r="7" fill="#ff5f57"/><circle cx="52" cy="23" r="7" fill="#febc2e"/><circle cx="76" cy="23" r="7" fill="#28c840"/>
+<text x="600.0" y="28" text-anchor="middle" class="title">manav@neural-core: ~/profile — zsh</text>
+<text x="40" y="100" class="t l0"><tspan fill="#34d399">manav@core</tspan><tspan fill="#8b93a7">:</tspan><tspan fill="#22d3ee">~</tspan><tspan fill="#8b93a7">$ </tspan><tspan fill="#e6edf7">whoami</tspan></text><text x="40" y="129" class="t l1"><tspan fill="#22d3ee">manav aghera</tspan><tspan fill="#8b93a7"> — ai/ml engineer · final-year cse student · india</tspan></text><text x="40" y="187" class="t l3"><tspan fill="#34d399">manav@core</tspan><tspan fill="#8b93a7">:</tspan><tspan fill="#22d3ee">~</tspan><tspan fill="#8b93a7">$ </tspan><tspan fill="#e6edf7">cat </tspan><tspan fill="#fbbf24">focus.json</tspan></text><text x="40" y="216" class="t l4"><tspan fill="#8b93a7">{</tspan></text><text x="40" y="245" class="t l5"><tspan fill="#a78bfa">  &quot;building&quot;</tspan><tspan fill="#8b93a7">:  </tspan><tspan fill="#34d399">[&quot;LLM systems that cite sources&quot;, &quot;autonomous agents&quot;]</tspan></text><text x="40" y="274" class="t l6"><tspan fill="#a78bfa">  &quot;exploring&quot;</tspan><tspan fill="#8b93a7">: </tspan><tspan fill="#34d399">[&quot;quant research&quot;, &quot;MCP tooling&quot;, &quot;eval pipelines&quot;]</tspan></text><text x="40" y="303" class="t l7"><tspan fill="#a78bfa">  &quot;shipped&quot;</tspan><tspan fill="#8b93a7">:   </tspan><tspan fill="#34d399">[&quot;CHRONUS&quot;, &quot;NewsSense&quot;, &quot;Clip Studio&quot;, &quot;Kaggle agent&quot;]</tspan></text><text x="40" y="332" class="t l8"><tspan fill="#a78bfa">  &quot;ranked&quot;</tspan><tspan fill="#8b93a7">:    </tspan><tspan fill="#fbbf24">&quot;top 1% — Kaggle Autonomous Agent Prediction&quot;</tspan></text><text x="40" y="361" class="t l9"><tspan fill="#a78bfa">  &quot;status&quot;</tspan><tspan fill="#8b93a7">:    </tspan><tspan fill="#f472b6">&quot;open to internships &amp; startup collabs&quot;</tspan></text><text x="40" y="390" class="t l10"><tspan fill="#8b93a7">}</tspan></text><text x="40" y="448" class="t l12"><tspan fill="#34d399">manav@core</tspan><tspan fill="#8b93a7">:</tspan><tspan fill="#22d3ee">~</tspan><tspan fill="#8b93a7">$ </tspan><tspan fill="#e6edf7">./ship </tspan><tspan fill="#fbbf24">--next-idea</tspan></text><g class="l13"><rect x="40" y="462" width="560" height="18" rx="4" fill="#0f1726" stroke="#1f2a3d"/><rect x="40" y="462" width="560" height="18" rx="4" fill="url(#barG)" class="fill13"/><text x="620" y="477" class="t"><tspan fill="#34d399">✓ deployed</tspan><tspan fill="#8b93a7">  idea → prototype → production</tspan></text></g><text x="40" y="535" class="t l15"><tspan fill="#34d399">manav@core</tspan><tspan fill="#8b93a7">:</tspan><tspan fill="#22d3ee">~</tspan><tspan fill="#8b93a7">$ </tspan><tspan class="caret" fill="#22d3ee">█</tspan></text>
+</svg>
