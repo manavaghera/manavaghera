@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Every graphic is built twice, once per GitHub colour mode; the README shows
 # whichever matches the viewer. PROFILE_VARIANT picks which one is being built.
-VARIANTS = {"dark": "mono", "light": "paper"}  # variant -> theme
+VARIANTS = {"dark": "noir", "light": "cream"}  # variant -> theme
 VARIANT = os.environ.get("PROFILE_VARIANT", "dark")
 DATA = Path(__file__).resolve().parent.parent / "assets"
 ASSETS = DATA / VARIANT
@@ -13,8 +13,10 @@ ASSETS = DATA / VARIANT
 # Each theme is four colours; every other shade is mixed from them.
 THEME = os.environ.get("PROFILE_THEME", VARIANTS[VARIANT])
 THEMES = {
-    "paper":     ("#f6f6f5", "#2a2a2a", "#111111", "#2a2a2a"),  # silver-white and charcoal (light mode)
     #            background  text       accent     second accent
+    "noir":      ("#000000", "#f2ede4", "#f2ede4", "#f2ede4"),  # pure black and bone cream only
+    "cream":     ("#f2ede4", "#000000", "#000000", "#000000"),  # the same two, flipped for light mode
+    "paper":     ("#f6f6f5", "#2a2a2a", "#111111", "#2a2a2a"),  # silver-white and charcoal (light mode)
     "aubergine": ("#3a0f34", "#dde3e8", "#eaaa00", "#dde3e8"),  # deep aubergine, ice silver, marigold
     "mono":      ("#2a2a2a", "#c0c0c0", "#e4e4e4", "#c0c0c0"),  # charcoal and moonlit silver only
     "signal":    ("#2a2a2a", "#c0c0c0", "#e10600", "#e6e6e6"),  # charcoal, moonlit silver, signal red
