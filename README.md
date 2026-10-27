@@ -2,50 +2,51 @@
 <div align="center">
 
 <a href="https://www.manavaghera.dev">
-  <img src="assets/hero.svg" width="100%" alt="Manav Aghera: AI/ML engineer building LLM systems, autonomous agents and quant tooling" />
+  <picture><source media="(prefers-color-scheme: light)" srcset="assets/light/hero.svg" /><img src="assets/dark/hero.svg" width="100%" alt="Manav Aghera: AI/ML engineer building LLM systems, autonomous agents and quant tooling" /></picture>
 </a>
 
 <br />
 
-<a href="https://www.manavaghera.dev">
+<a href="https://www.manavaghera.dev"><picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=111111&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." />
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=e4e4e4&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
-</a>
+</picture></a>
 
 <br /><br />
 
-<a href="https://www.manavaghera.dev"><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-e4e4e4?style=for-the-badge&logo=googlechrome&logoColor=e4e4e4&labelColor=303030" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/manav-aghera"><img src="https://img.shields.io/badge/linkedin-manav--aghera-c0c0c0?style=for-the-badge&logo=linkedin&logoColor=c0c0c0&labelColor=303030" alt="LinkedIn" /></a>
-<a href="mailto:manavaghera@yahoo.com"><img src="https://img.shields.io/badge/email-say%20hello-c0c0c0?style=for-the-badge&logo=maildotru&logoColor=c0c0c0&labelColor=303030" alt="Email" /></a>
-<img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=e4e4e4&label=PROFILE+VIEWS" alt="Profile views" />
+<a href="https://www.manavaghera.dev"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/portfolio-manavaghera.dev-2a2a2a?style=for-the-badge&logo=googlechrome&logoColor=f6f6f5&labelColor=535353" /><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-e4e4e4?style=for-the-badge&logo=googlechrome&logoColor=e4e4e4&labelColor=303030" alt="Portfolio" /></picture></a>
+<a href="https://www.linkedin.com/in/manav-aghera"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/linkedin-manav--aghera-2a2a2a?style=for-the-badge&logo=linkedin&logoColor=f6f6f5&labelColor=535353" /><img src="https://img.shields.io/badge/linkedin-manav--aghera-c0c0c0?style=for-the-badge&logo=linkedin&logoColor=c0c0c0&labelColor=303030" alt="LinkedIn" /></picture></a>
+<a href="mailto:manavaghera@yahoo.com"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/email-say%20hello-2a2a2a?style=for-the-badge&logo=maildotru&logoColor=f6f6f5&labelColor=535353" /><img src="https://img.shields.io/badge/email-say%20hello-c0c0c0?style=for-the-badge&logo=maildotru&logoColor=c0c0c0&labelColor=303030" alt="Email" /></picture></a>
+<picture><source media="(prefers-color-scheme: light)" srcset="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=2a2a2a&label=PROFILE+VIEWS" /><img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color=e4e4e4&label=PROFILE+VIEWS" alt="Profile views" /></picture>
 
 </div>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/divider.svg" /><img src="assets/dark/divider.svg" width="100%" alt="" /></picture>
 
-<img src="assets/terminal.svg" width="100%" alt="Terminal: Manav Aghera, AI/ML engineer and final-year CSE student in India. Building LLM systems that cite sources and autonomous agents; exploring quant research, MCP tooling and eval pipelines; open to internships and startup collabs." />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/terminal.svg" /><img src="assets/dark/terminal.svg" width="100%" alt="Terminal: Manav Aghera, AI/ML engineer and final-year CSE student in India. Building LLM systems that cite sources and autonomous agents; exploring quant research, MCP tooling and eval pipelines; open to internships and startup collabs." /></picture>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/divider.svg" /><img src="assets/dark/divider.svg" width="100%" alt="" /></picture>
 
 <h2 align="center">Featured builds</h2>
 
 <p align="center">
-  <a href="https://github.com/manavaghera/CHRONUS"><img src="assets/cards/chronus.svg" width="49%" alt="CHRONUS: a consent-first memory archive you can talk to" /></a>
-  <a href="https://github.com/manavaghera/LLM-NEWS-"><img src="assets/cards/newssense.svg" width="49%" alt="NewsSense: AI news with visible evidence" /></a>
-  <a href="https://github.com/manavaghera/Autonomous-Agent-Kaggle"><img src="assets/cards/kaggle-agent.svg" width="49%" alt="Autonomous Agent: Kaggle top 1%" /></a>
-  <a href="https://github.com/manavaghera/Twitch-Bulk-Downloader"><img src="assets/cards/clip-studio.svg" width="49%" alt="Clip Studio: bulk Twitch clip downloader" /></a>
-  <a href="https://github.com/manavaghera/Multi-agent-blog"><img src="assets/cards/autonomous-content.svg" width="49%" alt="AutonomousContent: self-healing multi-agent publishing" /></a>
-  <a href="https://github.com/manavaghera/mcp-demo"><img src="assets/cards/mcp-demo.svg" width="49%" alt="MCP Demo: Model Context Protocol end to end" /></a>
+  <a href="https://github.com/manavaghera/CHRONUS"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/chronus.svg" /><img src="assets/dark/cards/chronus.svg" width="49%" alt="CHRONUS: a consent-first memory archive you can talk to" /></picture></a>
+  <a href="https://github.com/manavaghera/LLM-NEWS-"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/newssense.svg" /><img src="assets/dark/cards/newssense.svg" width="49%" alt="NewsSense: AI news with visible evidence" /></picture></a>
+  <a href="https://github.com/manavaghera/Autonomous-Agent-Kaggle"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/kaggle-agent.svg" /><img src="assets/dark/cards/kaggle-agent.svg" width="49%" alt="Autonomous Agent: Kaggle top 1%" /></picture></a>
+  <a href="https://github.com/manavaghera/Twitch-Bulk-Downloader"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/clip-studio.svg" /><img src="assets/dark/cards/clip-studio.svg" width="49%" alt="Clip Studio: bulk Twitch clip downloader" /></picture></a>
+  <a href="https://github.com/manavaghera/Multi-agent-blog"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/autonomous-content.svg" /><img src="assets/dark/cards/autonomous-content.svg" width="49%" alt="AutonomousContent: self-healing multi-agent publishing" /></picture></a>
+  <a href="https://github.com/manavaghera/mcp-demo"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/cards/mcp-demo.svg" /><img src="assets/dark/cards/mcp-demo.svg" width="49%" alt="MCP Demo: Model Context Protocol end to end" /></picture></a>
 </p>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/divider.svg" /><img src="assets/dark/divider.svg" width="100%" alt="" /></picture>
 
-<img src="assets/timeline.svg" width="100%" alt="Journey timeline from joining GitHub in 2022 to CHRONUS and final year in 2026" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/timeline.svg" /><img src="assets/dark/timeline.svg" width="100%" alt="Journey timeline from joining GitHub in 2022 to CHRONUS and final year in 2026" /></picture>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/divider.svg" /><img src="assets/dark/divider.svg" width="100%" alt="" /></picture>
 
 <h2 align="center">Arsenal</h2>
 
-<img src="assets/ai-tools.svg" width="100%" alt="AI tools: Claude Code, Cursor, Copilot, Codex, Gemini CLI, Ollama, Hugging Face, OpenRouter, MCP and more" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/ai-tools.svg" /><img src="assets/dark/ai-tools.svg" width="100%" alt="AI tools: Claude Code, Cursor, Copilot, Codex, Gemini CLI, Ollama, Hugging Face, OpenRouter, MCP and more" /></picture>
 
 <br /><br />
 
@@ -53,31 +54,31 @@
 
 <table>
   <tr>
-    <td align="center"><sub><b>LANGUAGES</b></sub><br /><img src="https://skillicons.dev/icons?i=py,java,ts,js,rust,bash,powershell&theme=dark" alt="Python, Java, TypeScript, JavaScript, Rust, Bash, PowerShell" /></td>
-    <td align="center"><sub><b>AI / ML</b></sub><br /><img src="https://skillicons.dev/icons?i=pytorch,sklearn,anaconda&theme=dark" alt="PyTorch, scikit-learn, Anaconda" /></td>
+    <td align="center"><sub><b>LANGUAGES</b></sub><br /><picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=py,java,ts,js,rust,bash,powershell&theme=light" /><img src="https://skillicons.dev/icons?i=py,java,ts,js,rust,bash,powershell&theme=dark" alt="Python, Java, TypeScript, JavaScript, Rust, Bash, PowerShell" /></picture></td>
+    <td align="center"><sub><b>AI / ML</b></sub><br /><picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=pytorch,sklearn,anaconda&theme=light" /><img src="https://skillicons.dev/icons?i=pytorch,sklearn,anaconda&theme=dark" alt="PyTorch, scikit-learn, Anaconda" /></picture></td>
   </tr>
   <tr>
-    <td align="center"><sub><b>BACKEND &amp; DATA</b></sub><br /><img src="https://skillicons.dev/icons?i=fastapi,nodejs,bun,mongodb,docker&theme=dark" alt="FastAPI, Node.js, Bun, MongoDB, Docker" /></td>
-    <td align="center"><sub><b>FRONTEND</b></sub><br /><img src="https://skillicons.dev/icons?i=react,vite,tailwind,html,css&theme=dark" alt="React, Vite, Tailwind, HTML, CSS" /></td>
+    <td align="center"><sub><b>BACKEND &amp; DATA</b></sub><br /><picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=fastapi,nodejs,bun,mongodb,docker&theme=light" /><img src="https://skillicons.dev/icons?i=fastapi,nodejs,bun,mongodb,docker&theme=dark" alt="FastAPI, Node.js, Bun, MongoDB, Docker" /></picture></td>
+    <td align="center"><sub><b>FRONTEND</b></sub><br /><picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=react,vite,tailwind,html,css&theme=light" /><img src="https://skillicons.dev/icons?i=react,vite,tailwind,html,css&theme=dark" alt="React, Vite, Tailwind, HTML, CSS" /></picture></td>
   </tr>
   <tr>
-    <td align="center" colspan="2"><sub><b>TOOLING</b></sub><br /><img src="https://skillicons.dev/icons?i=git,github,githubactions,vercel,vscode,idea,androidstudio,windows&theme=dark" alt="Git, GitHub, GitHub Actions, Vercel, VS Code, IntelliJ IDEA, Android Studio, Windows" /></td>
+    <td align="center" colspan="2"><sub><b>TOOLING</b></sub><br /><picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=git,github,githubactions,vercel,vscode,idea,androidstudio,windows&theme=light" /><img src="https://skillicons.dev/icons?i=git,github,githubactions,vercel,vscode,idea,androidstudio,windows&theme=dark" alt="Git, GitHub, GitHub Actions, Vercel, VS Code, IntelliJ IDEA, Android Studio, Windows" /></picture></td>
   </tr>
 </table>
 
 </div>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/divider.svg" /><img src="assets/dark/divider.svg" width="100%" alt="" /></picture>
 
-<img src="assets/generated/tokens.svg" width="100%" alt="Tokens burned by my AI coding agents: Claude Code, Codex and Gemini CLI" />
-
-<br /><br />
-
-<img src="assets/generated/stats.svg" width="100%" alt="GitHub stats for manavaghera: all-time commits, streaks and repos" />
-
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/generated/tokens.svg" /><img src="assets/dark/generated/tokens.svg" width="100%" alt="Tokens burned by my AI coding agents: Claude Code, Codex and Gemini CLI" /></picture>
 
 <br /><br />
 
-<a href="https://www.manavaghera.dev"><img src="assets/footer.svg" width="100%" alt="Thanks for scrolling. Let's build something that ships." /></a>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/light/generated/stats.svg" /><img src="assets/dark/generated/stats.svg" width="100%" alt="GitHub stats for manavaghera: all-time commits, streaks and repos" /></picture>
+
+
+<br /><br />
+
+<a href="https://www.manavaghera.dev"><picture><source media="(prefers-color-scheme: light)" srcset="assets/light/footer.svg" /><img src="assets/dark/footer.svg" width="100%" alt="Thanks for scrolling. Let's build something that ships." /></picture></a>
 
 <sub><div align="center">Every graphic here is hand-built SVG, no GIFs. Stats refresh every 6 hours via <a href=".github/workflows/profile.yml">GitHub Actions</a>.</div></sub>

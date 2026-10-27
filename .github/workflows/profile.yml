@@ -22,8 +22,11 @@ jobs:
           python-version: "3.12"
       # PROFILE_TOKEN (optional, read-only PAT) lets private repos and private
       # contributions count; without it only public data is visible.
-      - name: Render live stats
-        run: python scripts/build_stats.py "${{ github.repository_owner }}"
+      - name: Render live stats (light and dark)
+        run: |
+          for variant in dark light; do
+            PROFILE_VARIANT=$variant python scripts/build_stats.py "${{ github.repository_owner }}"
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
@@ -31,7 +34,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/generated
+          git add assets
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh live stats"
           git pull --rebase origin main

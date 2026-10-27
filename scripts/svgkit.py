@@ -3,12 +3,17 @@ import os
 from html import escape
 from pathlib import Path
 
-ASSETS = Path(__file__).resolve().parent.parent / "assets"
+# Every graphic is built twice, once per GitHub colour mode; the README shows
+# whichever matches the viewer. PROFILE_VARIANT picks which one is being built.
+VARIANTS = {"dark": "mono", "light": "paper"}  # variant -> theme
+VARIANT = os.environ.get("PROFILE_VARIANT", "dark")
+DATA = Path(__file__).resolve().parent.parent / "assets"
+ASSETS = DATA / VARIANT
 
-# Switch the whole profile's look by changing THEME, then run scripts/build_all.py.
 # Each theme is four colours; every other shade is mixed from them.
-THEME = os.environ.get("PROFILE_THEME", "mono")
+THEME = os.environ.get("PROFILE_THEME", VARIANTS[VARIANT])
 THEMES = {
+    "paper":     ("#f6f6f5", "#2a2a2a", "#111111", "#2a2a2a"),  # silver-white and charcoal (light mode)
     #            background  text       accent     second accent
     "aubergine": ("#3a0f34", "#dde3e8", "#eaaa00", "#dde3e8"),  # deep aubergine, ice silver, marigold
     "mono":      ("#2a2a2a", "#c0c0c0", "#e4e4e4", "#c0c0c0"),  # charcoal and moonlit silver only
@@ -30,14 +35,17 @@ def mix(a, b, t):
     return "#" + "".join(f"{round(x + (y - x) * t):02x}" for x, y in zip(ca, cb))
 
 
-BG, INK, ACCENT, HOT = THEMES[THEME]
-PANEL = mix(BG, INK, .04)
-PANEL2 = mix(BG, INK, .07)
-LINE = mix(BG, INK, .12)
-LINE2 = mix(BG, INK, .18)
-DIM = mix(BG, INK, .36)
-MUTED = mix(BG, INK, .55)
-SOFT = mix(BG, INK, .80)
+def palette(theme):
+    bg, ink, accent, hot = THEMES[theme]
+    return dict(bg=bg, ink=ink, accent=accent, hot=hot, panel=mix(bg, ink, .04), panel2=mix(bg, ink, .07),
+                line=mix(bg, ink, .12), line2=mix(bg, ink, .18), dim=mix(bg, ink, .36),
+                muted=mix(bg, ink, .55), soft=mix(bg, ink, .80))
+
+
+_p = palette(THEME)
+BG, INK, ACCENT, HOT = _p["bg"], _p["ink"], _p["accent"], _p["hot"]
+PANEL, PANEL2, LINE, LINE2 = _p["panel"], _p["panel2"], _p["line"], _p["line2"]
+DIM, MUTED, SOFT = _p["dim"], _p["muted"], _p["soft"]
 
 SANS = "'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
 MONO = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace"
@@ -67,7 +75,7 @@ def write(name, content):
     path = ASSETS / name
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
-    print(f"wrote {path.relative_to(ASSETS.parent)} ({len(content):,} bytes)")
+    print(f"wrote {path.relative_to(DATA.parent)} ({len(content):,} bytes)")
 
 
 def pct(seconds, total):

@@ -7,16 +7,17 @@
 
 <br />
 
-<a href="https://www.manavaghera.dev">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color={accent}&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
-</a>
+<a href="https://www.manavaghera.dev"><picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color={l_accent}&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color={d_accent}&center=true&vCenter=true&width=720&lines=I+build+AI+that+shows+its+work.;RAG+systems+that+cite+their+sources.;Autonomous+agents+%E2%80%94+Kaggle+top+1%25.;Model+Context+Protocol+%C2%B7+evals+%C2%B7+quant." alt="I build AI that shows its work." />
+</picture></a>
 
 <br /><br />
 
-<a href="https://www.manavaghera.dev"><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-{accent}?style=for-the-badge&logo=googlechrome&logoColor={accent}&labelColor={panel}" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/manav-aghera"><img src="https://img.shields.io/badge/linkedin-manav--aghera-{ink}?style=for-the-badge&logo=linkedin&logoColor={ink}&labelColor={panel}" alt="LinkedIn" /></a>
-<a href="mailto:manavaghera@yahoo.com"><img src="https://img.shields.io/badge/email-say%20hello-{hot}?style=for-the-badge&logo=maildotru&logoColor={hot}&labelColor={panel}" alt="Email" /></a>
-<img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color={accent}&label=PROFILE+VIEWS" alt="Profile views" />
+<a href="https://www.manavaghera.dev"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/portfolio-manavaghera.dev-{l_ink}?style=for-the-badge&logo=googlechrome&logoColor={l_bg}&labelColor={l_soft}" /><img src="https://img.shields.io/badge/portfolio-manavaghera.dev-{d_accent}?style=for-the-badge&logo=googlechrome&logoColor={d_accent}&labelColor={d_panel}" alt="Portfolio" /></picture></a>
+<a href="https://www.linkedin.com/in/manav-aghera"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/linkedin-manav--aghera-{l_ink}?style=for-the-badge&logo=linkedin&logoColor={l_bg}&labelColor={l_soft}" /><img src="https://img.shields.io/badge/linkedin-manav--aghera-{d_ink}?style=for-the-badge&logo=linkedin&logoColor={d_ink}&labelColor={d_panel}" alt="LinkedIn" /></picture></a>
+<a href="mailto:manavaghera@yahoo.com"><picture><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/email-say%20hello-{l_ink}?style=for-the-badge&logo=maildotru&logoColor={l_bg}&labelColor={l_soft}" /><img src="https://img.shields.io/badge/email-say%20hello-{d_hot}?style=for-the-badge&logo=maildotru&logoColor={d_hot}&labelColor={d_panel}" alt="Email" /></picture></a>
+<picture><source media="(prefers-color-scheme: light)" srcset="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color={l_ink}&label=PROFILE+VIEWS" /><img src="https://komarev.com/ghpvc/?username=manavaghera&style=for-the-badge&color={d_accent}&label=PROFILE+VIEWS" alt="Profile views" /></picture>
 
 </div>
 

@@ -4,7 +4,7 @@ thread database, Mimo Code and opencode message databases, and Gemini CLI chats.
 
 Token counts only exist on this PC, so this runs locally, not in Actions.
 Claude Code prunes old transcripts, so totals are kept in
-assets/generated/tokens.json and the all-time number never shrinks.
+assets/tokens.json and the all-time number never shrinks.
 Only aggregate counts leave the machine, never project names or content.
 Run:  python scripts/build_tokens.py
 """
@@ -16,7 +16,7 @@ import sqlite3
 from collections import Counter
 
 from build_stats import odometer, roll_css
-from svgkit import (ACCENT, ASSETS, BG, DIM, HOT, INK, LINE, MONO, MUTED, PANEL, SANS, esc, svg, write)
+from svgkit import (ACCENT, DATA, BG, DIM, HOT, INK, LINE, MONO, MUTED, PANEL, SANS, esc, svg, write)
 
 USAGE_KEYS = ("input_tokens", "cache_creation_input_tokens", "cache_read_input_tokens", "output_tokens")
 CYCLE = 12
@@ -220,4 +220,4 @@ if __name__ == "__main__":
              "claude_stats": claude_all_time(os.path.join(home, ".claude", "stats-cache.json")),
              "mimo_sessions": opencode_family(os.path.join(home, ".local", "share", "mimocode", "mimocode.db")),
              "opencode_sessions": opencode_family(os.path.join(home, ".local", "share", "opencode", "opencode.db"))}
-    write("generated/tokens.svg", render(merge(ASSETS / "generated" / "tokens.json", fresh)))
+    write("generated/tokens.svg", render(merge(DATA / "tokens.json", fresh)))
