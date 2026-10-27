@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="NewsSense: AI news with visible evidence: verified claims, rapid source briefs and model comparisons, so readers see where every claim came from.">
 <title>NewsSense: AI news with visible evidence: verified claims, rapid source briefs and model comparisons, so readers see where every claim came from.</title>
 <style>
-.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #eaaa00; letter-spacing: 2px; }
-.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #755b75; letter-spacing: 2.5px; }
-.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #dde3e8; letter-spacing: -.5px; }
-.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #948497; }
-.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #bcb9c4; }
-.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #eaaa00; letter-spacing: 1px; }
+.idx { font: 700 14px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #e10600; letter-spacing: 2px; }
+.tag { font: 600 12px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #606060; letter-spacing: 2.5px; }
+.name { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #c0c0c0; letter-spacing: -.5px; }
+.blurb { font: 400 16px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #7c7c7c; }
+.chip { font: 600 12.5px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #a2a2a2; }
+.cta { font: 700 13px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #e10600; letter-spacing: 1px; }
 .in { animation: in .9s cubic-bezier(.2,.8,.2,1) both; }
 .spin { animation: spin 3s linear infinite; transform-box: view-box; transform-origin: 520px 74px; }
 .slow { animation-duration: 12s; }
@@ -32,16 +32,16 @@
 
 <defs>
   <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#eaaa00"/><stop offset=".45" stop-color="#eaaa00" stop-opacity=".05"/>
-    <stop offset=".55" stop-color="#eaaa00" stop-opacity=".05"/><stop offset="1" stop-color="#eaaa00"/>
+    <stop offset="0" stop-color="#e10600"/><stop offset=".45" stop-color="#e10600" stop-opacity=".05"/>
+    <stop offset=".55" stop-color="#e10600" stop-opacity=".05"/><stop offset="1" stop-color="#e10600"/>
     <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
   </linearGradient>
-  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#eaaa00" stop-opacity=".10"/><stop offset=".6" stop-color="#eaaa00" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#e10600" stop-opacity=".10"/><stop offset=".6" stop-color="#e10600" stop-opacity="0"/></radialGradient>
   <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
   <clipPath id="cc"><rect x="1" y="1" width="598" height="298" rx="20"/></clipPath>
 </defs>
 <g clip-path="url(#cc)">
-  <rect width="600" height="300" fill="#3a0f34"/>
+  <rect width="600" height="300" fill="#2a2a2a"/>
   <rect width="600" height="300" fill="url(#glow)"/>
   <rect x="0" y="0" width="260" height="300" fill="url(#sh)" class="sheen" transform="skewX(-20)"/>
 </g>
@@ -50,8 +50,8 @@
 <text x="72" y="52" class="tag">LLM NEWSROOM</text>
 <text x="36" y="114" class="name in">NewsSense</text>
 <text x="36" y="158" class="blurb in" style="animation-delay:.25s">AI news with visible evidence: verified claims, rapid source</text><text x="36" y="182" class="blurb in" style="animation-delay:.25s">briefs and model comparisons, so readers see where every</text><text x="36" y="206" class="blurb in" style="animation-delay:.25s">claim came from.</text>
-<rect x="36" y="240" width="71" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="79" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="154.1" y="259" text-anchor="middle" class="chip">FastAPI</text><rect x="201.39999999999998" y="240" width="86" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="244.6" y="259" text-anchor="middle" class="chip">React 19</text><rect x="295.79999999999995" y="240" width="102" height="28" rx="14" fill="#451e41" stroke="#573554"/><text x="346.8" y="259" text-anchor="middle" class="chip">TypeScript</text>
+<rect x="36" y="240" width="71" height="28" rx="14" fill="#343434" stroke="#454545"/><text x="71.4" y="259" text-anchor="middle" class="chip">Python</text><rect x="114.8" y="240" width="79" height="28" rx="14" fill="#343434" stroke="#454545"/><text x="154.1" y="259" text-anchor="middle" class="chip">FastAPI</text><rect x="201.39999999999998" y="240" width="86" height="28" rx="14" fill="#343434" stroke="#454545"/><text x="244.6" y="259" text-anchor="middle" class="chip">React 19</text><rect x="295.79999999999995" y="240" width="102" height="28" rx="14" fill="#343434" stroke="#454545"/><text x="346.8" y="259" text-anchor="middle" class="chip">TypeScript</text>
 <text x="542" y="259" text-anchor="end" class="cta">VIEW REPO</text>
 <text x="550" y="260" class="cta arrow">↗</text>
-<circle cx="520" cy="74" r="8" fill="none" stroke="#eaaa00" stroke-width="2" class="ping" style="animation-delay:0s"/><circle cx="520" cy="74" r="8" fill="none" stroke="#eaaa00" stroke-width="2" class="ping" style="animation-delay:1s"/><circle cx="520" cy="74" r="8" fill="none" stroke="#eaaa00" stroke-width="2" class="ping" style="animation-delay:2s"/><circle cx="520" cy="74" r="5" fill="#eaaa00"/>
+<circle cx="520" cy="74" r="8" fill="none" stroke="#e10600" stroke-width="2" class="ping" style="animation-delay:0s"/><circle cx="520" cy="74" r="8" fill="none" stroke="#e10600" stroke-width="2" class="ping" style="animation-delay:1s"/><circle cx="520" cy="74" r="8" fill="none" stroke="#e10600" stroke-width="2" class="ping" style="animation-delay:2s"/><circle cx="520" cy="74" r="5" fill="#e10600"/>
 </svg>

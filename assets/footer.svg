@@ -4,8 +4,8 @@
 .w1 { animation: slide 9s linear infinite; }
 .w2 { animation: slide 14s linear infinite reverse; }
 .w3 { animation: slide 20s linear infinite; }
-.big { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #dde3e8; letter-spacing: -.5px; }
-.small { font: 500 15px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #948497; letter-spacing: 2px; }
+.big { font: 800 34px 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif; fill: #c0c0c0; letter-spacing: -.5px; }
+.small { font: 500 15px 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace; fill: #7c7c7c; letter-spacing: 2px; }
 @keyframes slide { to { transform: translateX(-300px); } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; }
@@ -13,10 +13,10 @@
 
 <defs>
   <clipPath id="fc"><rect width="1200" height="210" rx="22"/></clipPath>
-  <linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="#eaaa00"/><stop offset="1" stop-color="#eaaa00"/></linearGradient>
+  <linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="#e10600"/><stop offset="1" stop-color="#e10600"/></linearGradient>
 </defs>
 <g clip-path="url(#fc)">
-  <rect width="1200" height="210" fill="#3a0f34"/>
+  <rect width="1200" height="210" fill="#2a2a2a"/>
   <path class="w3" d="M0 140 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 q75.0 -14 150.0 0 t150.0 0 V210 H0z" fill="url(#fg)" opacity=".05"/>
   <path class="w2" d="M0 158 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 q75.0 -18 150.0 0 t150.0 0 V210 H0z" fill="url(#fg)" opacity=".10"/>
   <path class="w1" d="M0 176 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 q75.0 -12 150.0 0 t150.0 0 V210 H0z" fill="url(#fg)" opacity=".20"/>

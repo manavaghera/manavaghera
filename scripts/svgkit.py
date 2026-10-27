@@ -7,7 +7,7 @@ ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
 # Switch the whole profile's look by changing THEME, then run scripts/build_all.py.
 # Each theme is four colours; every other shade is mixed from them.
-THEME = os.environ.get("PROFILE_THEME", "aubergine")
+THEME = os.environ.get("PROFILE_THEME", "signal")
 THEMES = {
     #            background  text       accent     second accent
     "aubergine": ("#3a0f34", "#dde3e8", "#eaaa00", "#dde3e8"),  # deep aubergine, ice silver, marigold

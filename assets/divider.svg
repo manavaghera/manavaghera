@@ -9,9 +9,9 @@
   *, *::before, *::after { animation: none !important; }
 }</style>
 
-<defs><linearGradient id="dl" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0"><stop offset="0" stop-color="#dde3e8" stop-opacity="0"/>
-<stop offset=".5" stop-color="#dde3e8" stop-opacity=".35"/><stop offset="1" stop-color="#dde3e8" stop-opacity="0"/></linearGradient></defs>
+<defs><linearGradient id="dl" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0"><stop offset="0" stop-color="#c0c0c0" stop-opacity="0"/>
+<stop offset=".5" stop-color="#c0c0c0" stop-opacity=".35"/><stop offset="1" stop-color="#c0c0c0" stop-opacity="0"/></linearGradient></defs>
 <line x1="40" y1="18" x2="1160" y2="18" stroke="url(#dl)" stroke-width="1"/>
-<line x1="40" y1="18" x2="1160" y2="18" stroke="#eaaa00" stroke-width="2" pathLength="200" class="run" stroke-linecap="round"/>
-<g transform="translate(600.0 18)"><rect x="-6" y="-6" width="12" height="12" fill="#3a0f34" stroke="#eaaa00" stroke-width="1.5" class="gem"/></g>
+<line x1="40" y1="18" x2="1160" y2="18" stroke="#e10600" stroke-width="2" pathLength="200" class="run" stroke-linecap="round"/>
+<g transform="translate(600.0 18)"><rect x="-6" y="-6" width="12" height="12" fill="#2a2a2a" stroke="#e10600" stroke-width="1.5" class="gem"/></g>
 </svg>
